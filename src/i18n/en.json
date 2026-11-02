@@ -1,5 +1,5 @@
 {
- "GeoLens：面向华语市场的 GEO SaaS。自动监测目前已接入 {LIVE}；{COMING_CN}与海外 {COMING_GLOBAL} 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。": "GeoLens is a GEO SaaS for Chinese-speaking markets. Automated monitoring currently covers {LIVE}. Being connected: {COMING_CN} (China) and {COMING_GLOBAL} (global). Entity card → packs → publish → mention monitoring.",
+ "GeoLens：面向华语市场的 GEO SaaS。自动监测目前已接入 {LIVE}；{COMING_CN}与海外 {COMING_GLOBAL} 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。": "GeoLens is a GEO SaaS for Chinese-speaking markets. Automated monitoring currently covers {LIVE}. Being connected: {COMING_CN} and {COMING_GLOBAL} (global). Entity card → packs → publish → mention monitoring.",
  "申请试用 Demo": "Request a demo",
  "申请GeoLens 远程演示：实体卡、国内与海外引擎投放包与提及监测矩阵，约 30–45 分钟。": "Book a remote GeoLens walkthrough: entity card, CN and global engine packs, and the mention-monitoring matrix — about 30–45 minutes.",
  "常见问题 FAQ：什么是 GEO、和 SEO 差别、价格": "FAQ: what GEO is, how it differs from SEO, pricing",
@@ -10,7 +10,7 @@
  "GeoLens 指南：GEO 入门、实体卡写法、如何检测国内与海外 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）是否提到你的品牌。": "GeoLens guides: GEO basics, writing an entity card, and checking whether Chinese and global AI (Doubao, DeepSeek, ChatGPT, Perplexity…) mention your brand.",
  "方案与价格 Pricing": "Plans & pricing",
  "GeoLens 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。台湾与海外可用信用卡／PayPal，大陆客户可联系人工开通。": "GeoLens pricing: Free NT$0; Starter NT$1,990/month; Pro NT$3,900/month or NT$9,900/quarter; Enterprise by quote. Card / PayPal for Taiwan and overseas; Chinese-language markets customers can contact us for manual activation.",
- "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。自动监测已接入 {LIVE}；{COMING_CN}及海外 {COMING_GLOBAL} 陆续接入中（海外专属投放包路线图）。": "A generative engine optimization (GEO) workspace: entity cards, engine packs, channel publishing and mention monitoring. Automated monitoring covers {LIVE}. Being connected: {COMING_CN} (China) and {COMING_GLOBAL} (global); dedicated overseas packs are on the roadmap.",
+ "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。自动监测已接入 {LIVE}；{COMING_CN}及海外 {COMING_GLOBAL} 陆续接入中（海外专属投放包路线图）。": "A generative engine optimization (GEO) workspace: entity cards, engine packs, channel publishing and mention monitoring. Automated monitoring covers {LIVE}. Being connected: {COMING_CN} and {COMING_GLOBAL} (global); dedicated overseas packs are on the roadmap.",
  "指南正文目前只有中文版本（繁体与简体）。以下标题与摘要为翻译，点击后会打开繁体中文正文。": "Guide articles are currently available in Chinese only (Traditional and Simplified). Titles and summaries below are translated; links open the Traditional Chinese article.",
  "GEO 入门：让国内与海外 AI 推荐你的品牌": "GEO basics: getting Chinese and global AI to recommend your brand",
  "用四个步骤理解生成式引擎优化：统一实体事实、按引擎改写、发布到会被读取的渠道、用固定问法监测国内与海外 AI。": "Generative engine optimization in four steps: unify entity facts, adapt per engine, publish where engines read, and monitor Chinese and global AI with fixed prompts.",
@@ -27,7 +27,7 @@
  "GeoLens 是什么？": "What is GeoLens?",
  "GeoLens（GeoLens）是面向华语市场、以国内与海外生成式引擎为目标的 GEO 工作台 SaaS（目前自动跑问已接入 {LIVE}，其他引擎陆续接入中）。固定流程：实体卡 → 引擎投放包 → 渠道发布 → 固定问法监测提及。产品目前处于上线前阶段，可通过官网申请试用。": "GeoLens is a GEO workspace SaaS for Chinese-speaking markets, targeting Chinese and global generative engines (automated prompts currently cover {LIVE}; more engines are being connected). Fixed flow: entity card → engine packs → channel publishing → fixed-prompt mention monitoring. The product is pre-launch; you can request a trial on the website.",
  "GeoLens 支持哪些 AI 引擎？": "Which AI engines does GeoLens support?",
- "目前已接入并自动跑问的只有 {LIVE}。{COMING_CN}，以及海外的 {COMING_GLOBAL} 陆续接入中，接入前不会自动监测；你可以把在这些引擎上得到的真实回答粘贴进监测表人工记录。投放包目前有豆包、DeepSeek、智谱清言、百度文心、通义千问的模板，海外专属投放包在路线图上。GeoLens不调用各家发文接口，内容由你发布到公开渠道。": "Automated prompts currently run only on {LIVE}. Still being connected, and not monitored automatically yet: {COMING_CN} (China) and {COMING_GLOBAL} (global); you can paste real answers from these engines into the monitor table manually. Pack templates exist for Doubao, DeepSeek, Zhipu, Baidu ERNIE and Qwen; dedicated overseas packs are on the roadmap. GeoLens does not call any platform's publishing API — you publish content to public channels yourself.",
+ "目前已接入并自动跑问的只有 {LIVE}。{COMING_CN}，以及海外的 {COMING_GLOBAL} 陆续接入中，接入前不会自动监测；你可以把在这些引擎上得到的真实回答粘贴进监测表人工记录。投放包目前有豆包、DeepSeek、智谱清言、百度文心、通义千问的模板，海外专属投放包在路线图上。GeoLens不调用各家发文接口，内容由你发布到公开渠道。": "Automated prompts currently run only on {LIVE}. Still being connected, and not monitored automatically yet: {COMING_CN} and {COMING_GLOBAL} (global); you can paste real answers from these engines into the monitor table manually. Pack templates exist for Doubao, DeepSeek, Zhipu, Baidu ERNIE and Qwen; dedicated overseas packs are on the roadmap. GeoLens does not call any platform's publishing API — you publish content to public channels yourself.",
  "如何监测 AI 有没有提到我的品牌？": "How do I monitor whether AI mentions my brand?",
  "GeoLens使用固定问法（例如「推荐几款 XX 品类的工具」）定期向引擎提问，把「是否点名、排第几、是否附来源」记录到监测表，并按已填格子计算本周提及率。目前 {LIVE} 已接入自动跑问；其他引擎陆续接入中，接入前可粘贴真实回答人工记录，系统不会伪造结果。": "GeoLens asks engines fixed prompts on a schedule (e.g. “recommend a few tools in category XX”), records whether you are named, your position and whether sources are cited, and computes this week's mention rate over filled cells. Automated prompts currently run on {LIVE}; other engines are being connected — until then you can paste real answers manually. The system never fabricates results.",
  "GEO 多久能见效？": "How long does GEO take to work?",
@@ -103,5 +103,12 @@
  "代工厂（OEM／ODM）怎么做 GEO：让海外与大陆采购问 AI 时找到你": "GEO for OEM/ODM manufacturers: be found when overseas and Chinese-language buyers ask AI",
  "采购找代工厂时，也会先问 ChatGPT 或 DeepSeek「台湾有哪些 XX 代工厂」。代工厂要公开的是制程能力、材料、MOQ、产能、认证与交期，而且要有英文与简体版本。": "Buyers sourcing a manufacturer may start by asking ChatGPT or DeepSeek which Taiwan factories make a product. OEM/ODM makers need public, citable capability facts — processes, materials, MOQ, capacity, certifications, lead times — in English and Simplified Chinese too.",
  "电商品牌怎么让 AI 推荐你的商品：从商品页到第三方评测": "How e-commerce brands get products recommended by AI: from product pages to third-party reviews",
- "消费者会问 AI「预算三千有什么推荐的空气清净机」。电商品牌要让商品页读得到、规格比得了，再加上真实的第三方评测，AI 才有理由推荐你。": "Shoppers ask AI things like “best air purifier under NT$3,000”. E-commerce brands need readable product pages, comparable specs and genuine third-party reviews before AI has a reason to recommend them."
+ "消费者会问 AI「预算三千有什么推荐的空气清净机」。电商品牌要让商品页读得到、规格比得了，再加上真实的第三方评测，AI 才有理由推荐你。": "Shoppers ask AI things like “best air purifier under NT$3,000”. E-commerce brands need readable product pages, comparable specs and genuine third-party reviews before AI has a reason to recommend them.",
+ "GeoLens 是一家位于台湾的生成式引擎优化（GEO）SaaS 公司，帮助品牌被 ChatGPT、Perplexity、Gemini、豆包、DeepSeek 等 AI 引用与推荐。创办人 YuHao Hsu。": "GeoLens is a Taiwan-based Generative Engine Optimization (GEO) SaaS company helping brands get cited and recommended by ChatGPT, Perplexity, Gemini, Doubao, DeepSeek and other AI engines. Founder: YuHao Hsu.",
+ "联系 GeoLens：kinnv@geolens.uk。": "Contact GeoLens: kinnv@geolens.uk.",
+ "GeoLens 隐私政策。": "GeoLens Privacy Policy.",
+ "GeoLens 服务条款。": "GeoLens Terms of Service.",
+ "联系 Contact": "Contact",
+ "隐私政策 Privacy Policy": "Privacy Policy",
+ "服务条款 Terms of Service": "Terms of Service"
 }
