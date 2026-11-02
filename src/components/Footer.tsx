@@ -61,7 +61,7 @@ export function Footer() {
         ))}
       </div>
       <div className="border-t border-zinc-200 py-5 text-center text-xs text-zinc-400">
-        © {new Date().getFullYear()} {siteConfig.owner} · {t("引源 GEO", "YinYuan GEO")}
+        © {new Date().getFullYear()} {siteConfig.owner} · {t("GeoLens", "GeoLens")}
       </div>
     </footer>
   );

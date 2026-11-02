@@ -245,7 +245,7 @@ export function DemoContent() {
   const [contact, setContact] = useState("");
   const [sent, setSent] = useState(false);
 
-  const trialSubject = locale.startsWith("zh") ? "引源 GEO 试用申请" : "YinYuan GEO demo request";
+  const trialSubject = locale.startsWith("zh") ? "GeoLens 试用申请" : "GeoLens demo request";
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();

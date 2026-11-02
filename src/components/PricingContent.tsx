@@ -9,13 +9,13 @@ export function PricingContent() {
   const { t, locale, p: lpath } = useI18n();
   const email = getDemoEmail();
   const mailto = `mailto:${email}?subject=${encodeURIComponent(
-    locale.startsWith("zh") ? "引源 GEO 方案咨询" : "YinYuan GEO plan inquiry",
+    locale.startsWith("zh") ? "GeoLens 方案咨询" : "GeoLens plan inquiry",
   )}&body=${encodeURIComponent(
     locale.startsWith("zh")
-      ? "您好，我想了解引源 GEO 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
-      : "Hi, I'd like to learn about YinYuan GEO plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
+      ? "您好，我想了解GeoLens 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
+      : "Hi, I'd like to learn about GeoLens plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
   )}`;
-  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 大陆客户开通咨询（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通引源 GEO。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
+  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("GeoLens 大陆客户开通咨询（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通GeoLens。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
 
   return (
     <>
@@ -120,8 +120,8 @@ export function PricingContent() {
 
       <p className="mt-8 text-xs leading-relaxed text-zinc-400">
         {t(
-          "订阅可随时取消。付款后我们会邮件联系你，人工协助开通工作台。Enterprise 与发票需求请来信 yjz8521@gmail.com。",
-          "Cancel anytime. After payment we email you and set up your workspace with you. For Enterprise or invoices, email yjz8521@gmail.com.",
+          "订阅可随时取消。付款后我们会邮件联系你，人工协助开通工作台。Enterprise 与发票需求请来信 kinnv@geolens.uk。",
+          "Cancel anytime. After payment we email you and set up your workspace with you. For Enterprise or invoices, email kinnv@geolens.uk.",
         )}
       </p>
     </Section>

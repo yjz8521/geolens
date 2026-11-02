@@ -1,4 +1,4 @@
-# 引源 GEO 落地页 / YinYuan GEO Landing
+# GeoLens 落地页 / GeoLens Landing
 
 营销站（非产品 App）。产品本体在私有仓 `github.com/yjz8521/geo-platform`。
 
@@ -22,7 +22,7 @@ npm run build && npm start   # 生产构建
 | `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` | Vercel / 本地根路径留空；GitHub project Pages 设为 `/yin-yuan-geo-landing` |
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
 | `NEXT_PUBLIC_CHECKOUT_STARTER` / `_PRO` / `_PRO_QUARTERLY` | Lemon Squeezy 结账链接覆盖（默认值写在 `src/lib/site.ts`） |
-| `NEXT_PUBLIC_DEMO_EMAIL` | 试用联系邮箱，默认 `yjz8521@gmail.com` |
+| `NEXT_PUBLIC_DEMO_EMAIL` | 试用联系邮箱，默认 `kinnv@geolens.uk` |
 
 不要把 Lemon Squeezy API key、Webhook secret 或数据库凭证放进本仓。
 
@@ -69,7 +69,7 @@ Next.js App Router · TypeScript · Tailwind CSS v4
 - Build command：`npm run build`；Output directory：`out`
 - 環境變數：`NEXT_PUBLIC_SITE_URL=https://<網域>`（或 `SITE_URL`，不要結尾斜線）；`BASE_PATH`、`NEXT_PUBLIC_BASE_PATH` 留空。
 - canonical、hreflang、JSON-LD、sitemap.xml、robots.txt、llms.txt 都從這個變數取網域（`src/lib/site.ts` 的 `getSiteUrl()`、`scripts/write-seo.mjs`）。預設就是 `https://yin-yuan-geo.pages.dev`；之後買了自己的網域再改。
-- 聯絡信箱：`NEXT_PUBLIC_DEMO_EMAIL` 可覆寫；預設 yjz8521@gmail.com。網域開好 Email Routing 後改成 `hi@<網域>`（規格 4-4）；該信箱只能收信，回信先用 Gmail。
+- 聯絡信箱：`NEXT_PUBLIC_DEMO_EMAIL` 可覆寫；預設 kinnv@geolens.uk。網域開好 Email Routing 後改成 `hi@<網域>`（規格 4-4）；該信箱只能收信，回信先用 Gmail。
 - 轉址：`public/_redirects`（Cloudflare 格式，與 `vercel.json` 相同，301）；`public/_headers` 設安全標頭與快取。
 - `vercel.json`：舊網址 yin-yuan-geo-landing.vercel.app 整站 301 到 https://yin-yuan-geo.pages.dev 。
 - 選填：`NEXT_PUBLIC_CHECK_DELIVERY_DAYS`（健檢交付工作天，預設 2）、`NEXT_PUBLIC_CONTACT_LINE_ID`、`NEXT_PUBLIC_CONTACT_WECHAT_ID`（覆寫健檢頁的 LINE／微信 ID）、`NEXT_PUBLIC_FORMSPREE_ENDPOINT`（健檢頁線上表單，預設 https://formspree.io/f/mdeaqldp ，可用環境變數覆寫）。
@@ -101,4 +101,4 @@ BASE_PATH=/yin-yuan-geo-landing NEXT_PUBLIC_BASE_PATH=/yin-yuan-geo-landing \
 ## 收款 Payments (Lemon Squeezy)
 - Starter / Pro CTAs use Lemon Squeezy checkout links hardcoded in `src/lib/site.ts` (override: `NEXT_PUBLIC_CHECKOUT_STARTER` / `NEXT_PUBLIC_CHECKOUT_PRO`). Stripe is not used (unsupported in Taiwan); `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` is obsolete.
 - **Note:** the Lemon Squeezy store is currently in **Test mode** pending approval — real charges won't happen until the store is activated (switch links to live if they change).
-- Mainland customers: mailto yjz8521@gmail.com (WeChat / bank transfer, manual).
+- Mainland customers: mailto kinnv@geolens.uk (WeChat / bank transfer, manual).

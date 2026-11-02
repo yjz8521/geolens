@@ -33,7 +33,7 @@ export function AboutContent() {
           <li>{t("家里的事业在大陆做 B2B 设备的销售与服务。", "The family business sells and services B2B equipment in mainland China.")}</li>
           <li>{t("每天实际使用 DeepSeek、豆包、ChatGPT、Claude 等 AI，熟悉两岸不同 AI 平台和繁体、简体的差异。", "Uses DeepSeek, Doubao, ChatGPT, Claude and other AI every day, and knows how AI platforms — and Traditional vs. Simplified Chinese — differ across the Taiwan Strait.")}</li>
         </ul>
-        <h3 className="mt-6 text-base font-semibold text-zinc-950">{t("为什么做引源 GEO", "Why YinYuan GEO")}</h3>
+        <h3 className="mt-6 text-base font-semibold text-zinc-950">{t("为什么做GeoLens", "Why GeoLens")}</h3>
         <p className="mt-2 text-sm leading-relaxed text-zinc-600">
           {t(
             "两岸的 AI 平台不一样，台湾品牌和台商常常只顾到其中一边。",
