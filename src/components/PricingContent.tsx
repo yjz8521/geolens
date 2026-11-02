@@ -15,7 +15,6 @@ export function PricingContent() {
       ? "您好，我想了解GeoLens 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
       : "Hi, I'd like to learn about GeoLens plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
   )}`;
-  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("GeoLens 大陆客户开通咨询（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通GeoLens。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
 
   return (
     <>
@@ -23,8 +22,8 @@ export function PricingContent() {
       label={t("方案", "Pricing")}
       title={t("方案与价格：Free / Starter / Pro / Enterprise", "Plans & pricing: Free / Starter / Pro / Enterprise")}
       lead={t(
-        "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。大陆客户可联系人工开通（微信／支付宝）。",
-        "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also quarterly). Mainland China customers can contact us for manual activation.",
+        "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。Enterprise 与发票需求请来信联系。",
+        "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also billed quarterly). For Enterprise or invoicing, contact us.",
       )}
     >
       {PAYMENTS_LIVE ? null : (
@@ -37,7 +36,24 @@ export function PricingContent() {
         </p>
       )}
     </PageHero>
+    <Section className="pt-12 pb-0 sm:pt-14 sm:pb-0">
+      <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">{t("服务内容", "Services")}</h2>
+      <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          [t("AI 能见度健检", "AI visibility audit"), t("用固定问法检查各 AI 引擎是否提到你的品牌、提到哪些竞争对手。", "Check whether AI engines mention your brand, and which competitors they recommend, using a fixed prompt set.")],
+          [t("品牌实体卡", "Brand entity card"), t("整理统一、可核对的品牌事实，让 AI 正确理解你。", "A consistent, verifiable set of brand facts so AI engines describe you accurately.")],
+          [t("引擎内容包", "Engine content packs"), t("针对 ChatGPT、Perplexity、Gemini 等引擎改写与发布内容。", "Content adapted and published for ChatGPT, Perplexity, Gemini and other engines.")],
+          [t("提及监测与报告", "Mention monitoring & reports"), t("持续追踪提及、排序与引用来源，按周报告。", "Ongoing tracking of mentions, position and cited sources, with weekly reports.")],
+        ].map(([h, d]) => (
+          <div key={h} className="rounded-2xl border border-zinc-200 bg-white p-6">
+            <h3 className="font-semibold text-zinc-950">{h}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600">{d}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
     <Section className="pt-12 sm:pt-14">
+      <h2 className="mb-6 text-2xl font-semibold tracking-tight text-zinc-950">{t("方案与价格", "Plans")}</h2>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {draftPlans.map((p) => {
           const paid = p.code === "starter" || p.code === "pro";
@@ -106,11 +122,6 @@ export function PricingContent() {
               {p.code === "pro" ? (
                 <a href={CHECKOUT_PRO_QUARTERLY} rel="noopener noreferrer" className="mt-2 block rounded-full border border-zinc-300 py-2 text-center text-xs text-zinc-950 hover:bg-zinc-100">
                   {t("季付 NT$9,900／季（约 NT$3,300／月，省 15%）", "Quarterly NT$9,900 (~NT$3,300/mo, save 15%)")}
-                </a>
-              ) : null}
-              {paid ? (
-                <a href={cnMailto} className="mt-2 block rounded-full border border-zinc-200 py-2 text-center text-xs text-zinc-600 hover:bg-zinc-100">
-                  {t("大陆客户／付款问题：联系开通（微信／支付宝）", "Mainland China / payment issues: contact to activate (WeChat Pay / Alipay)")}
                 </a>
               ) : null}
             </div>

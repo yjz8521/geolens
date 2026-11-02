@@ -28,7 +28,10 @@ export function Footer() {
     {
       h: t("公司", "Company"),
       links: [
-        { href: lpath("/about/"), label: t("关于", "About") },
+        { href: lpath("/about/"), label: t("关于我们", "About") },
+        { href: lpath("/contact/"), label: t("联系我们", "Contact") },
+        { href: lpath("/privacy/"), label: t("隐私政策", "Privacy Policy") },
+        { href: lpath("/terms/"), label: t("服务条款", "Terms of Service") },
         { href: `mailto:${email}`, label: email, raw: true },
       ],
     },
@@ -61,7 +64,7 @@ export function Footer() {
         ))}
       </div>
       <div className="border-t border-zinc-200 py-5 text-center text-xs text-zinc-400">
-        © {new Date().getFullYear()} {siteConfig.owner} · {t("GeoLens", "GeoLens")}
+        © 2026 GeoLens. {t("保留所有权利。", "All rights reserved.")} · {t("台湾", "Taiwan")}
       </div>
     </footer>
   );
