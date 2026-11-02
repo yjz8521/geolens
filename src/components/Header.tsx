@@ -15,6 +15,7 @@ const links = [
   { href: "/faq/", zh: "FAQ", en: "FAQ" },
   { href: "/demo/", zh: "免费健检", en: "Free check" },
   { href: "/about/", zh: "关于", en: "About" },
+  { href: "/contact/", zh: "联系", en: "Contact" },
 ];
 
 /** usePathname() has no basePath; normalise trailing slash and treat /guide/* as Guide. */

@@ -102,7 +102,6 @@ ${[
   link("實體卡怎麼寫", "/guide/entity-card/", "定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法"),
   link("如何檢測 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "固定問法集、記錄格式與提及率計算方法"),
   link("怎麼知道 DeepSeek 有沒有推薦我的品牌", "/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料"),
-  link("台灣品牌怎麼讓大陸 AI 找得到你", "/guide/taiwan-brand-mainland-ai/", "繁簡與用語差異、簡體頁面、兩岸公開管道與分開監測的五個檢查點"),
   link("B2B 設備與工業品怎麼做 GEO", "/guide/b2b-equipment-geo/", "規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法"),
   link("餐廳怎麼讓 AI 推薦你", "/guide/restaurant-geo/", "店家資料一致、文字版菜單、用餐場合、真實評價、兩岸平台與帶地點的監測問法"),
   link("代工廠（OEM／ODM）怎麼做 GEO", "/guide/oem-manufacturer-geo/", "製造能力頁、認證、不具名案例、繁英簡三種版本、B2B 平台與中英文監測問法"),

@@ -4,11 +4,11 @@ export const siteConfig = {
   nameEn: "GeoLens",
   productFull: "GeoLens",
   /** Former product name; kept in JSON-LD / llms.txt so AI links old mentions to the same entity. */
-  legacyName: "GeoLens 投放台",
+  legacyName: "GeoLens Platform",
   /** Homepage headline (owner picked option 3 of 3). */
-  taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
-  taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
-  owner: "Kinnv",
+  taglineZh: "让 ChatGPT、Perplexity、Gemini 等 AI 推荐你的品牌",
+  taglineEn: "Get your brand cited by ChatGPT, Perplexity, Gemini and other AI answer engines",
+  owner: "YuHao Hsu",
 };
 
 export function getSiteUrl(): string {

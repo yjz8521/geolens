@@ -29,7 +29,7 @@ const provide = [
   { zh: "网站", en: "Website" },
   { zh: "产业", en: "Industry" },
   { zh: "主要产品或服务", en: "Main products or services" },
-  { zh: "主要市场（台湾／大陆／海外）", en: "Main market (Taiwan / mainland China / overseas)" },
+  { zh: "主要市场（台湾／亚太／全球）", en: "Main market (Taiwan / Asia-Pacific / global)" },
 ];
 
 function Check({ className = "" }: { className?: string }) {
@@ -128,8 +128,8 @@ function HealthCheck() {
     const subject = (zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request") + (f.company ? ` · ${f.company}` : "");
     const na = zh ? "（未填）" : "(not provided)";
     const body = zh
-      ? `公司／品牌名称：${f.company}\n网站：${f.website || na}\n产业：${f.industry || na}\n主要产品或服务：${f.product || na}\n主要市场（台湾／大陆／海外）：${f.market || na}`
-      : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Taiwan / mainland China / overseas): ${f.market || na}`;
+      ? `公司／品牌名称：${f.company}\n网站：${f.website || na}\n产业：${f.industry || na}\n主要产品或服务：${f.product || na}\n主要市场（台湾／亚太／全球）：${f.market || na}`
+      : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Taiwan / Asia-Pacific / global): ${f.market || na}`;
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
@@ -194,7 +194,7 @@ function HealthCheck() {
                   { name: "website", label: t("网站", "Website") },
                   { name: "industry", label: t("产业", "Industry") },
                   { name: "product", label: t("主要产品或服务", "Main products or services") },
-                  { name: "market", label: t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)") },
+                  { name: "market", label: t("主要市场（台湾／亚太／全球）", "Main market (Taiwan / Asia-Pacific / global)") },
                   { name: "email", label: "Email", required: true, type: "email" },
                 ]}
                 submit={t("送出申请", "Submit")}
@@ -207,7 +207,7 @@ function HealthCheck() {
                 <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
                 <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input value={f.industry} onChange={set("industry")} className={input} /></label>
                 <label className="block text-sm text-zinc-600">{t("主要产品或服务", "Main products or services")}<input value={f.product} onChange={set("product")} className={input} /></label>
-                <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input value={f.market} onChange={set("market")} className={input} /></label>
+                <label className="block text-sm text-zinc-600">{t("主要市场（台湾／亚太／全球）", "Main market (Taiwan / Asia-Pacific / global)")}<input value={f.market} onChange={set("market")} className={input} /></label>
                 <button type="submit" className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800">
                   {t("用邮件申请健检", "Apply by email")}
                 </button>

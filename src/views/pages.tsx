@@ -1,3 +1,5 @@
+import { ContactContent } from "@/components/ContactContent";
+import { LegalContent } from "@/components/LegalContent";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,10 +20,10 @@ export const homeMeta = (l: Locale): Metadata => ({ alternates: alternates(l, "/
 const latestGuides = [...guides].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3).map(({ slug, title, description, date }) => ({ slug, title, description, date }));
 export const Home = () => <HomeContent guides={latestGuides} />;
 
-export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "GeoLens 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。台湾与海外可用信用卡／PayPal，大陆客户可联系人工开通。");
+export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "GeoLens 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。可用信用卡／PayPal 订阅。");
 export const Pricing = () => <PricingContent />;
 
-export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "GeoLens：面向华语市场、以国内与海外生成式 AI 为目标的 GEO SaaS（自动监测已接入 {LIVE}，其他引擎陆续接入中），产品负责人 Kinnv。");
+export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "GeoLens 是一家位于台湾的生成式引擎优化（GEO）SaaS 公司，帮助品牌被 ChatGPT、Perplexity、Gemini、豆包、DeepSeek 等 AI 引用与推荐。创办人 YuHao Hsu。");
 export const About = () => <AboutContent />;
 
 export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "免费 AI 能见度健检", "免费 AI 能见度健检：用 10 个固定问法问 DeepSeek（自动），其他 AI 人工查询，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约，不保证排名或见效时间。也可申请试用／远程演示。");
@@ -131,3 +133,10 @@ export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
     </article>
   );
 }
+
+export const contactMeta = (l: Locale): Metadata => pageMeta(l, "/contact/", "联系 Contact", "联系 GeoLens：kinnv@geolens.uk。");
+export const Contact = () => <ContactContent />;
+export const privacyMeta = (l: Locale): Metadata => pageMeta(l, "/privacy/", "隐私政策 Privacy Policy", "GeoLens 隐私政策。");
+export const Privacy = () => <LegalContent kind="privacy" />;
+export const termsMeta = (l: Locale): Metadata => pageMeta(l, "/terms/", "服务条款 Terms of Service", "GeoLens 服务条款。");
+export const Terms = () => <LegalContent kind="terms" />;

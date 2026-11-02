@@ -54,10 +54,10 @@ const problems = [
 const reasons = [
   {
     icon: "bridge",
-    zh: "两岸都顾到",
-    en: "Both sides covered",
-    dZh: "繁简与两岸用语分开处理，国内与海外引擎用同一份品牌事实。",
-    dEn: "Traditional/Simplified script and cross-strait wording handled separately; Chinese and global engines share one set of brand facts.",
+    zh: "多引擎、多语言",
+    en: "Multi-engine, multilingual",
+    dZh: "英文、繁体与简体内容分开处理，所有引擎共用同一份品牌事实。",
+    dEn: "English, Traditional and Simplified Chinese content handled separately; every engine shares one consistent set of brand facts.",
   },
   {
     icon: "repeat",
@@ -175,15 +175,15 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
               {t("{LIVE} 已接入自动监测 · 其他引擎陆续接入中", "Live: {LIVE} · more engines coming")}
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-              {t("两岸 AI", "Be found by AI")}
+              {t("让 AI", "Get your brand")}
               <span className="block bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-                {t("都查得到你", "on both sides of the Strait")}
+                {t("推荐你的品牌", "cited by AI")}
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
               {t(
-                "当客户问 DeepSeek、豆包、ChatGPT「推荐哪家」时，让你的品牌出现在答案里。GeoLens 帮台湾品牌与台商整理品牌事实、产出各引擎适用的内容，并持续监测提及率。",
-                "When customers ask DeepSeek, Doubao or ChatGPT for a recommendation, make sure your brand is in the answer. GeoLens helps Taiwan brands and Taiwanese businesses structure brand facts, produce engine-ready content, and track mention rate.",
+                "当客户问 ChatGPT、Perplexity、Gemini、DeepSeek「推荐哪家」时，让你的品牌出现在答案里。GeoLens 帮品牌整理品牌事实、产出各引擎适用的内容，并持续监测提及率。",
+                "When customers ask ChatGPT, Perplexity, Gemini or DeepSeek for a recommendation, make sure your brand is in the answer. GeoLens helps brands structure their facts, produce engine-ready content, and track how often AI mentions them.",
               )}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -216,7 +216,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       {/* Engines strip */}
       <div className="border-b border-zinc-200 bg-zinc-50/60">
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-          <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">{t("覆盖引擎（国内＋海外）", "Engines covered")}</p>
+          <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">{t("覆盖引擎", "Engines covered")}</p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
             {liveEngines.map((e) => (
               <span key={e.id} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-950 px-3.5 py-1.5 text-sm font-semibold text-white">
@@ -239,7 +239,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       <Section>
         <div className="mx-auto max-w-3xl text-center [&>*]:mx-auto">
           <SectionLabel>{t("痛点", "Problem")}</SectionLabel>
-          <SectionTitle>{t("品牌在国内与海外生成式 AI 里「隐形」", "Brands are invisible in Chinese and global generative AI")}</SectionTitle>
+          <SectionTitle>{t("品牌在生成式 AI 里「隐形」", "Brands are invisible in generative AI answers")}</SectionTitle>
           <div className="[&>p]:mx-auto">
             <SectionLead>
               {t(
@@ -332,7 +332,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       <Section className="pt-0 sm:pt-0">
         <div className="mx-auto max-w-3xl text-center [&>*]:mx-auto">
           <SectionLabel>{t("为什么选GeoLens", "Why GeoLens")}</SectionLabel>
-          <SectionTitle>{t("为两岸市场做的 GEO", "GEO built for both sides of the Strait")}</SectionTitle>
+          <SectionTitle>{t("为 AI 搜索时代做的 GEO", "GEO built for the AI search era")}</SectionTitle>
         </div>
         <ul className="mt-12 grid gap-5 sm:grid-cols-3">
           {reasons.map((r) => (
