@@ -11,31 +11,31 @@
 
 ## 產品
 
-- [首頁](https://yin-yuan-geo.pages.dev/): 產品概覽、四步流程與引擎接入現況
-- [方案與價格](https://yin-yuan-geo.pages.dev/pricing/): Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格
-- [常見問題](https://yin-yuan-geo.pages.dev/faq/): GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象
-- [申請試用](https://yin-yuan-geo.pages.dev/demo/): 預約遠端演示，申請工作台試用（邀請制）
+- [首頁](https://geolens.uk/): 產品概覽、四步流程與引擎接入現況
+- [方案與價格](https://geolens.uk/pricing/): Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格
+- [常見問題](https://geolens.uk/faq/): GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象
+- [申請試用](https://geolens.uk/demo/): 預約遠端演示，申請工作台試用（邀請制）
 
 ## 指南（繁體中文；簡體版在 /zh-hans/guide/）
 
-- [GEO 指南總覽](https://yin-yuan-geo.pages.dev/guide/): 生成式引擎最佳化入門文章列表
-- [GEO 入門](https://yin-yuan-geo.pages.dev/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
-- [實體卡怎麼寫](https://yin-yuan-geo.pages.dev/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
-- [如何檢測 AI 是否提到你的品牌](https://yin-yuan-geo.pages.dev/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
-- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://yin-yuan-geo.pages.dev/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料
-- [台灣品牌怎麼讓大陸 AI 找得到你](https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/): 繁簡與用語差異、簡體頁面、兩岸公開管道與分開監測的五個檢查點
-- [B2B 設備與工業品怎麼做 GEO](https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/): 規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法
-- [餐廳怎麼讓 AI 推薦你](https://yin-yuan-geo.pages.dev/guide/restaurant-geo/): 店家資料一致、文字版菜單、用餐場合、真實評價、兩岸平台與帶地點的監測問法
-- [代工廠（OEM／ODM）怎麼做 GEO](https://yin-yuan-geo.pages.dev/guide/oem-manufacturer-geo/): 製造能力頁、認證、不具名案例、繁英簡三種版本、B2B 平台與中英文監測問法
-- [電商品牌怎麼讓 AI 推薦你的商品](https://yin-yuan-geo.pages.dev/guide/ecommerce-geo/): 官網商品頁與 Product 結構化資料、可比較的規格、適合誰、第三方評測與兩岸用語單位
+- [GEO 指南總覽](https://geolens.uk/guide/): 生成式引擎最佳化入門文章列表
+- [GEO 入門](https://geolens.uk/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
+- [實體卡怎麼寫](https://geolens.uk/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
+- [如何檢測 AI 是否提到你的品牌](https://geolens.uk/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
+- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://geolens.uk/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料
+- [台灣品牌怎麼讓大陸 AI 找得到你](https://geolens.uk/guide/taiwan-brand-mainland-ai/): 繁簡與用語差異、簡體頁面、兩岸公開管道與分開監測的五個檢查點
+- [B2B 設備與工業品怎麼做 GEO](https://geolens.uk/guide/b2b-equipment-geo/): 規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法
+- [餐廳怎麼讓 AI 推薦你](https://geolens.uk/guide/restaurant-geo/): 店家資料一致、文字版菜單、用餐場合、真實評價、兩岸平台與帶地點的監測問法
+- [代工廠（OEM／ODM）怎麼做 GEO](https://geolens.uk/guide/oem-manufacturer-geo/): 製造能力頁、認證、不具名案例、繁英簡三種版本、B2B 平台與中英文監測問法
+- [電商品牌怎麼讓 AI 推薦你的商品](https://geolens.uk/guide/ecommerce-geo/): 官網商品頁與 Product 結構化資料、可比較的規格、適合誰、第三方評測與兩岸用語單位
 
 ## 其他語言版本（Languages）
 
-- [繁體中文](https://yin-yuan-geo.pages.dev/): 繁體中文 首頁；同一份事實與價格口徑
-- [简体中文](https://yin-yuan-geo.pages.dev/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
-- [English](https://yin-yuan-geo.pages.dev/en/): English 首頁；同一份事實與價格口徑
+- [繁體中文](https://geolens.uk/): 繁體中文 首頁；同一份事實與價格口徑
+- [简体中文](https://geolens.uk/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
+- [English](https://geolens.uk/en/): English 首頁；同一份事實與價格口徑
 
 ## Optional
 
-- [關於](https://yin-yuan-geo.pages.dev/about/): 產品與負責人介紹
-- [简体中文指南](https://yin-yuan-geo.pages.dev/zh-hans/guide/): 全部 GEO 指南的简体中文版
+- [關於](https://geolens.uk/about/): 產品與負責人介紹
+- [简体中文指南](https://geolens.uk/zh-hans/guide/): 全部 GEO 指南的简体中文版
