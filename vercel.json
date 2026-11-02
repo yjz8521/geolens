@@ -1,17 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "yin-yuan-geo-landing.vercel.app"
-        }
-      ],
-      "destination": "https://yin-yuan-geo.pages.dev/:path*",
-      "permanent": true
-    },
-    {
       "source": "/:lang(ms|ja|ko)",
       "destination": "/en/",
       "permanent": true

@@ -14,7 +14,7 @@ const publicDir = join(root, "public");
 const siteUrl = (
   process.env.SITE_URL ||
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://yin-yuan-geo.pages.dev"
+  "https://geolens.uk"
 ).replace(/\/$/, "");
 
 const LOCALES = [

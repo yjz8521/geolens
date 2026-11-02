@@ -14,7 +14,7 @@ export const siteConfig = {
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://yin-yuan-geo.pages.dev"
+    "https://geolens.uk"
   );
 }
 

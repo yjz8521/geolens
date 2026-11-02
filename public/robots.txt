@@ -79,4 +79,4 @@ Allow: /
 User-Agent: *
 Allow: /
 
-Sitemap: https://yin-yuan-geo.pages.dev/sitemap.xml
+Sitemap: https://geolens.uk/sitemap.xml
