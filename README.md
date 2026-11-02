@@ -18,7 +18,7 @@ npm run build && npm start   # 生产构建
 
 | 变量 | 说明 |
 |------|------|
-| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；默认 `https://yin-yuan-geo.pages.dev`（Pages 镜像也以 Vercel 为 canonical） |
+| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；默认 `https://geolens.uk`（Pages 镜像也以 Vercel 为 canonical） |
 | `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` | Vercel / 本地根路径留空；GitHub project Pages 设为 `/yin-yuan-geo-landing` |
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
 | `NEXT_PUBLIC_CHECKOUT_STARTER` / `_PRO` / `_PRO_QUARTERLY` | Lemon Squeezy 结账链接覆盖（默认值写在 `src/lib/site.ts`） |
@@ -64,14 +64,14 @@ Next.js App Router · TypeScript · Tailwind CSS v4
 
 ## Deploy
 
-### Cloudflare Pages（正式網址 https://yin-yuan-geo.pages.dev）
+### Cloudflare Pages（正式網址 https://geolens.uk）
 
 - Build command：`npm run build`；Output directory：`out`
 - 環境變數：`NEXT_PUBLIC_SITE_URL=https://<網域>`（或 `SITE_URL`，不要結尾斜線）；`BASE_PATH`、`NEXT_PUBLIC_BASE_PATH` 留空。
-- canonical、hreflang、JSON-LD、sitemap.xml、robots.txt、llms.txt 都從這個變數取網域（`src/lib/site.ts` 的 `getSiteUrl()`、`scripts/write-seo.mjs`）。預設就是 `https://yin-yuan-geo.pages.dev`；之後買了自己的網域再改。
+- canonical、hreflang、JSON-LD、sitemap.xml、robots.txt、llms.txt 都從這個變數取網域（`src/lib/site.ts` 的 `getSiteUrl()`、`scripts/write-seo.mjs`）。預設就是 `https://geolens.uk`；之後買了自己的網域再改。
 - 聯絡信箱：`NEXT_PUBLIC_DEMO_EMAIL` 可覆寫；預設 kinnv@geolens.uk。網域開好 Email Routing 後改成 `hi@<網域>`（規格 4-4）；該信箱只能收信，回信先用 Gmail。
 - 轉址：`public/_redirects`（Cloudflare 格式，與 `vercel.json` 相同，301）；`public/_headers` 設安全標頭與快取。
-- `vercel.json`：舊網址 yin-yuan-geo-landing.vercel.app 整站 301 到 https://yin-yuan-geo.pages.dev 。
+- `vercel.json`：舊網址 yin-yuan-geo-landing.vercel.app 整站 301 到 https://geolens.uk 。
 - 選填：`NEXT_PUBLIC_CHECK_DELIVERY_DAYS`（健檢交付工作天，預設 2）、`NEXT_PUBLIC_CONTACT_LINE_ID`、`NEXT_PUBLIC_CONTACT_WECHAT_ID`（覆寫健檢頁的 LINE／微信 ID）、`NEXT_PUBLIC_FORMSPREE_ENDPOINT`（健檢頁線上表單，預設 https://formspree.io/f/mdeaqldp ，可用環境變數覆寫）。
 
 ### Vercel (preferred, root URL)
