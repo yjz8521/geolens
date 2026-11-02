@@ -6,14 +6,15 @@ import { useI18n } from "@/lib/i18n";
 import { CHECKOUT_PRO_QUARTERLY, PAYMENTS_LIVE, draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
 
 export function PricingContent() {
-  const { t, locale, p: lpath } = useI18n();
+  const { t, p: lpath } = useI18n();
   const email = getDemoEmail();
   const mailto = `mailto:${email}?subject=${encodeURIComponent(
-    locale.startsWith("zh") ? "GeoLens 方案咨询" : "GeoLens plan inquiry",
+    t("GeoLens 方案咨询", "GeoLens plan inquiry"),
   )}&body=${encodeURIComponent(
-    locale.startsWith("zh")
-      ? "您好，我想了解GeoLens 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
-      : "Hi, I'd like to learn about GeoLens plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
+    t(
+      "您好，我想了解GeoLens 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n",
+      "Hi, I'd like to learn about GeoLens plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
+    ),
   )}`;
 
   return (

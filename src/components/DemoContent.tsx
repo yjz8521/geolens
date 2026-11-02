@@ -125,10 +125,10 @@ function HealthCheck() {
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    const subject = (zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request") + (f.company ? ` · ${f.company}` : "");
-    const na = zh ? "（未填）" : "(not provided)";
+    const subject = t("免费 AI 能见度健检申请", "Free AI visibility check request") + (f.company ? ` · ${f.company}` : "");
+    const na = t("（未填）", "(not provided)");
     const body = zh
-      ? `公司／品牌名称：${f.company}\n网站：${f.website || na}\n产业：${f.industry || na}\n主要产品或服务：${f.product || na}\n主要市场（台湾／亚太／全球）：${f.market || na}`
+      ? `${t("公司／品牌名称", "Company / brand name")}：${f.company}\n${t("网站", "Website")}：${f.website || na}\n${t("产业", "Industry")}：${f.industry || na}\n${t("主要产品或服务", "Main products or services")}：${f.product || na}\n${t("主要市场（台湾／亚太／全球）", "Main market (Taiwan / Asia-Pacific / global)")}：${f.market || na}`
       : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Taiwan / Asia-Pacific / global): ${f.market || na}`;
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
@@ -188,7 +188,7 @@ function HealthCheck() {
               <FormspreeForm
                 endpoint={FORMSPREE_ENDPOINT}
                 title={t("在线申请健检", "Apply online")}
-                subject={zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request"}
+                subject={t("免费 AI 能见度健检申请", "Free AI visibility check request")}
                 fields={[
                   { name: "brand", label: t("公司／品牌名称", "Company / brand name"), required: true },
                   { name: "website", label: t("网站", "Website") },
@@ -198,7 +198,7 @@ function HealthCheck() {
                   { name: "email", label: "Email", required: true, type: "email" },
                 ]}
                 submit={t("送出申请", "Submit")}
-                fallback={`mailto:${email}?subject=${encodeURIComponent(zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request")}`}
+                fallback={`mailto:${email}?subject=${encodeURIComponent(t("免费 AI 能见度健检申请", "Free AI visibility check request"))}`}
               />
             ) : (
               <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 shadow-lg shadow-zinc-900/5">
@@ -245,14 +245,14 @@ export function DemoContent() {
   const [contact, setContact] = useState("");
   const [sent, setSent] = useState(false);
 
-  const trialSubject = locale.startsWith("zh") ? "GeoLens 试用申请" : "GeoLens demo request";
+  const trialSubject = t("GeoLens 试用申请", "GeoLens demo request");
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     const subject = trialSubject;
     const body =
       locale.startsWith("zh")
-        ? `姓名 / 称呼：${name}\n公司 / 品牌：${company || "（未填）"}\n联系方式（微信／电话，选填）：${contact || "（未填）"}\n需求：\n${note || "（未填）"}`
+        ? `${t("姓名 / 称呼", "Name")}：${name}\n${t("公司 / 品牌", "Company / brand")}：${company || t("（未填）", "(not provided)")}\n${t("联系方式（微信／电话，选填）", "Other contact (optional)")}：${contact || t("（未填）", "(not provided)")}\n${t("需求", "Notes")}：\n${note || t("（未填）", "(not provided)")}`
         : `Name: ${name}\nCompany / brand: ${company || "(not provided)"}\nOther contact (optional): ${contact || "(not provided)"}\nNotes:\n${note || "(not provided)"}`;
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject + (company ? ` · ${company}` : ""))}&body=${encodeURIComponent(body)}`;
     setSent(true);
@@ -372,14 +372,13 @@ export function DemoContent() {
             type="submit"
             className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
           >
-            {t(`发送至 ${email}`, `Send to ${email}`)}
+            {t("发送至", "Send to")} {email}
           </button>
           {sent ? (
             <p role="status" className="rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 text-xs text-zinc-950">
-              {t(
-                `若邮件程序没有自动打开，请直接写信到 ${email}，并附上上面填写的内容。`,
-                `If your mail app did not open, email ${email} directly with the details above.`,
-              )}
+              {t("若邮件程序没有自动打开，请直接写信到 ", "If your mail app did not open, email ")}
+              {email}
+              {t("，并附上上面填写的内容。", " directly with the details above.")}
             </p>
           ) : null}
           <p className="text-center text-xs text-zinc-400">

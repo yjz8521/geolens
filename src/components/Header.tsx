@@ -40,7 +40,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="主导航" className="hidden items-center gap-1 md:flex">
+        <nav aria-label={t("主导航", "Main navigation")} className="hidden items-center gap-1 md:flex">
           {links.map((l) => {
             const active = isActive(pathname, l.href);
             return (
@@ -72,7 +72,7 @@ export function Header() {
         </div>
       </div>
 
-      <nav aria-label="主导航（手机）" className="flex gap-1 overflow-x-auto border-t border-zinc-200 px-4 py-2 md:hidden">
+      <nav aria-label={t("主导航（手机）", "Main navigation (mobile)")} className="flex gap-1 overflow-x-auto border-t border-zinc-200 px-4 py-2 md:hidden">
         {links.map((l) => {
           const active = isActive(pathname, l.href);
           return (

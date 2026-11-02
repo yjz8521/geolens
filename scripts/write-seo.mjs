@@ -29,7 +29,7 @@ const latestGuide = GUIDES.map((g) => g.date).sort().at(-1);
 const today = new Date().toISOString().slice(0, 10);
 // [path, locales that have it, lastmod]
 const pages = [
-  ...["/", "/pricing/", "/faq/", "/demo/", "/about/"].map((p) => [p, LOCALES, today]),
+  ...["/", "/pricing/", "/faq/", "/demo/", "/about/", "/contact/", "/privacy/", "/terms/"].map((p) => [p, LOCALES, today]),
   ["/guide/", LOCALES, latestGuide],
   ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => l.code.startsWith("zh")), g.date]),
 ];
@@ -75,9 +75,9 @@ const engineStatusLines = [
   `- 陸續接入中（尚未自動監測）：${names(coming.filter((e) => e.region === "cn"))}；海外 ${names(coming.filter((e) => e.region === "global"))}。接入前使用者可貼上真實回答人工記錄。`,
 ].join("\n");
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
-const llms = `# GeoLens（GeoLens）
+const llms = `# GeoLens
 
-> GeoLens（GeoLens，舊稱「GeoLens 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
+> GeoLens（舊稱「GeoLens 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
 
 引擎現況（請如實引用）：
 ${engineStatusLines}
@@ -116,6 +116,7 @@ ${LOCALES.map((l) => link(l.label, `${l.prefix}/`, `${l.label} 首頁；同一�
 
 ${[
   link("關於", "/about/", "產品與負責人介紹"),
+  link("聯絡我們", "/contact/", "聯絡方式與諮詢管道"),
   link("简体中文指南", "/zh-hans/guide/", "全部 GEO 指南的简体中文版"),
 ].join("\n")}
 `;
