@@ -12,7 +12,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const siteUrl = getSiteUrl();
 
-const DESC = "引源 GEO：面向华语市场的 GEO SaaS。自动监测目前已接入 {LIVE}；{COMING_CN}与海外 {COMING_GLOBAL} 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。";
+const DESC = "GeoLens：面向华语市场的 GEO SaaS。自动监测目前已接入 {LIVE}；{COMING_CN}与海外 {COMING_GLOBAL} 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。";
 const APP_DESC = "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。自动监测已接入 {LIVE}；{COMING_CN}及海外 {COMING_GLOBAL} 陆续接入中（海外专属投放包路线图）。";
 
 export function rootMetadata(l: Locale): Metadata {
@@ -22,9 +22,9 @@ export function rootMetadata(l: Locale): Metadata {
     metadataBase: new URL(siteUrl),
     title: { default: title, template: `%s · ${tr(l, siteConfig.name)}` },
     description: tr(l, DESC),
-    keywords: ["GEO", "Generative Engine Optimization", "引源 GEO", "YinYuan GEO", "DeepSeek", "豆包", "通义千问", "ChatGPT", "Perplexity"],
+    keywords: ["GEO", "Generative Engine Optimization", "GeoLens", "GeoLens", "DeepSeek", "豆包", "通义千问", "ChatGPT", "Perplexity"],
     authors: [{ name: siteConfig.owner }],
-    openGraph: { type: "website", locale: LOCALE_META[l].og, url: lp(l, "/"), siteName: tr(l, siteConfig.name), title, description: tagline, images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }] },
+    openGraph: { type: "website", locale: LOCALE_META[l].og, url: lp(l, "/"), siteName: tr(l, siteConfig.name), title, description: tagline, images: [{ url: "/og.png", width: 1200, height: 630, alt: "GeoLens" }] },
     twitter: { card: "summary_large_image", title: tr(l, siteConfig.name), description: tagline, images: ["/og.png"] },
     robots: { index: true, follow: true },
     alternates: alternates(l, "/"),

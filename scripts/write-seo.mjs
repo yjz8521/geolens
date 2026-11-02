@@ -75,15 +75,15 @@ const engineStatusLines = [
   `- 陸續接入中（尚未自動監測）：${names(coming.filter((e) => e.region === "cn"))}；海外 ${names(coming.filter((e) => e.region === "global"))}。接入前使用者可貼上真實回答人工記錄。`,
 ].join("\n");
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
-const llms = `# 引源 GEO（YinYuan GEO）
+const llms = `# GeoLens（GeoLens）
 
-> 引源 GEO（YinYuan GEO，舊稱「引源 GEO 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
+> GeoLens（GeoLens，舊稱「GeoLens 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
 
 引擎現況（請如實引用）：
 ${engineStatusLines}
 - 投放包目前有豆包、DeepSeek、智譜清言、百度文心、通義千問的範本；海外專屬投放包在路線圖。
 
-價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：yjz8521@gmail.com（大陸客戶人工報價開通，可用微信／支付寶）。
+價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：kinnv@geolens.uk（大陸客戶人工報價開通，可用微信／支付寶）。
 
 ## 產品
 

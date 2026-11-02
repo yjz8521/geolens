@@ -182,8 +182,8 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
               {t(
-                "当客户问 DeepSeek、豆包、ChatGPT「推荐哪家」时，让你的品牌出现在答案里。引源 GEO 帮台湾品牌与台商整理品牌事实、产出各引擎适用的内容，并持续监测提及率。",
-                "When customers ask DeepSeek, Doubao or ChatGPT for a recommendation, make sure your brand is in the answer. YinYuan GEO helps Taiwan brands and Taiwanese businesses structure brand facts, produce engine-ready content, and track mention rate.",
+                "当客户问 DeepSeek、豆包、ChatGPT「推荐哪家」时，让你的品牌出现在答案里。GeoLens 帮台湾品牌与台商整理品牌事实、产出各引擎适用的内容，并持续监测提及率。",
+                "When customers ask DeepSeek, Doubao or ChatGPT for a recommendation, make sure your brand is in the answer. GeoLens helps Taiwan brands and Taiwanese businesses structure brand facts, produce engine-ready content, and track mention rate.",
               )}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -331,7 +331,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       {/* Why us */}
       <Section className="pt-0 sm:pt-0">
         <div className="mx-auto max-w-3xl text-center [&>*]:mx-auto">
-          <SectionLabel>{t("为什么选引源", "Why YinYuan")}</SectionLabel>
+          <SectionLabel>{t("为什么选GeoLens", "Why GeoLens")}</SectionLabel>
           <SectionTitle>{t("为两岸市场做的 GEO", "GEO built for both sides of the Strait")}</SectionTitle>
         </div>
         <ul className="mt-12 grid gap-5 sm:grid-cols-3">

@@ -1,10 +1,10 @@
 import { LOCALE_META, alternates, lp, tr, type Locale } from "./locales";
 export const siteConfig = {
-  name: "引源 GEO",
-  nameEn: "YinYuan GEO",
-  productFull: "引源 GEO",
+  name: "GeoLens",
+  nameEn: "GeoLens",
+  productFull: "GeoLens",
   /** Former product name; kept in JSON-LD / llms.txt so AI links old mentions to the same entity. */
-  legacyName: "引源 GEO 投放台",
+  legacyName: "GeoLens 投放台",
   /** Homepage headline (owner picked option 3 of 3). */
   taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
   taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
@@ -36,8 +36,8 @@ export function pageMeta(l: Locale, path: string, title: string, description: st
     title: T,
     description: D,
     alternates: alternates(l, path, only),
-    openGraph: { type: "website" as const, url, siteName: tr(l, "引源 GEO"), locale: LOCALE_META[l].og, title: `${T} · ${tr(l, "引源 GEO")}`, description: D, images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }] },
-    twitter: { card: "summary_large_image" as const, title: `${T} · ${tr(l, "引源 GEO")}`, description: D, images: ["/og.png"] },
+    openGraph: { type: "website" as const, url, siteName: tr(l, "GeoLens"), locale: LOCALE_META[l].og, title: `${T} · ${tr(l, "GeoLens")}`, description: D, images: [{ url: "/og.png", width: 1200, height: 630, alt: "GeoLens" }] },
+    twitter: { card: "summary_large_image" as const, title: `${T} · ${tr(l, "GeoLens")}`, description: D, images: ["/og.png"] },
   };
 }
 
@@ -79,7 +79,7 @@ export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.tr
 export const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim() || "https://formspree.io/f/mdeaqldp";
 
 export function getDemoEmail(): string {
-  return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";
+  return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "kinnv@geolens.uk";
 }
 
 /** List prices (TWD); quotas align with geo-platform plan codes. */
