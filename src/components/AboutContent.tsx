@@ -22,8 +22,8 @@ export function AboutContent() {
         label={t("关于我们", "About us")}
         title={t("GeoLens：让 AI 推荐你的品牌", "GeoLens helps brands get cited by AI")}
         lead={t(
-          "GeoLens 是位于台湾的生成式引擎优化（GEO）SaaS，帮助品牌在 ChatGPT、Perplexity、Gemini、豆包、DeepSeek 等 AI 回答中被准确提及、引用与推荐。",
-          "GeoLens is a Generative Engine Optimization (GEO) SaaS based in Taiwan. We help brands get accurately mentioned, cited and recommended in AI answers from ChatGPT, Perplexity, Gemini, Doubao, DeepSeek and other engines.",
+          "GeoLens 是位于台湾的生成式引擎优化（GEO）SaaS，服务新加坡、马来西亚、台湾与海外的华语企业和贸易商，帮助它们在 ChatGPT、Gemini、DeepSeek 等 AI 的中英文回答中被准确提及、引用与推荐。",
+          "GeoLens is a Generative Engine Optimization (GEO) SaaS based in Taiwan, serving Chinese-speaking businesses and traders in Singapore, Malaysia, Taiwan and beyond. We help them get accurately mentioned, cited and recommended in English and Chinese answers from ChatGPT, Gemini, DeepSeek and other AI engines.",
         )}
       />
       <Section className="pt-12 sm:pt-14">

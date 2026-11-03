@@ -7,7 +7,7 @@ Marketing site only — not the product app. Product lives in the private repo a
 ## 本地运行 / Run locally
 
 ```bash
-cd yin-yuan-geo-landing
+cd geolens
 cp .env.example .env.local   # 按需填写
 npm install
 npm run dev                  # http://localhost:3000
@@ -23,6 +23,7 @@ npm run build && npm start   # 生产构建
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
 | `NEXT_PUBLIC_CHECKOUT_STARTER` / `_PRO` / `_PRO_QUARTERLY` | Lemon Squeezy 结账链接覆盖（默认值写在 `src/lib/site.ts`） |
 | `NEXT_PUBLIC_DEMO_EMAIL` | 试用联系邮箱，默认 `kinnv@geolens.uk` |
+| `NEXT_PUBLIC_CONTACT_WHATSAPP` | WhatsApp 号码（国际格式、只要数字，例如 `60123456789`）。留空则不显示 |
 
 不要把 Lemon Squeezy API key、Webhook secret 或数据库凭证放进本仓。
 
@@ -39,14 +40,21 @@ Do not commit Lemon Squeezy API keys, webhook secrets, or DB credentials.
 
 ### 2. 付款（Lemon Squeezy）
 
-Stripe 不支持台湾，改用 Lemon Squeezy（信用卡／PayPal，新台币）。结账链接在 `src/lib/site.ts`：Starter、Pro、Pro 季付。
-商店目前为 **Test mode**（审核中）。审核通过并切到 Live 后：把 `PAYMENTS_LIVE` 改为 `true`（移除定价页「付款通道审核中」提示），并确认 Live 模式下的结账链接是否变更。
+Stripe 不支持台湾，改用 Lemon Squeezy（信用卡／PayPal）。网站价格以**美元**显示（`src/lib/site.ts` 的 `draftPlans`）；目前的结账链接仍是旧商店 `yin-yuan-geo` 的新台币商品，请在 Lemon Squeezy 建立 GeoLens 的美元商品后换掉链接。结账链接在 `src/lib/site.ts`：Starter、Pro、Pro 季付。
+商店目前为 **Test mode**（审核中）。审核通过并切到 Live 后：把 `PAYMENTS_LIVE` 改为 `true`。在那之前，方案页的付费按钮会改成「联系开通」（寄信），不会把客户带到测试模式的结账页。
 
 ## 引擎接入狀態 / Engine status
 
 所有「已接入／陸續接入中」的說法都來自 `src/content/engines.json`。某個引擎接上自動跑問後，把它的 `"live"` 改成 `true`，重新 build 即可；首頁、方案、FAQ、指南、JSON-LD、llms.txt 會一起更新。
 
 文案裡用代號表示引擎名單：`{LIVE}`（已接入）、`{COMING_CN}`（國內接入中）、`{COMING_GLOBAL}`（海外接入中），由 `src/lib/engines.ts` 依語言填入名稱。新寫的文案若提到引擎現況，請用這些代號，不要直接寫死引擎名稱。
+
+## 语言与网址 / Languages & URLs
+
+- 英文是默认语言，放在根目录（`/`、`/pricing/`…），也是 `x-default`。
+- 繁体中文在 `/zh-hant/`，简体中文在 `/zh-hans/`。
+- 指南分两种：`src/content/geo.ts` 里标 `lang: "en"` 的是英文指南（`/guide/<slug>/`）；其余是中文指南（`/zh-hant/guide/<slug>/`、`/zh-hans/guide/<slug>/`）。
+- 2026-11-03 起英文从 `/en/` 搬到根目录、中文指南从根目录搬到 `/zh-hant/`；`public/_redirects` 与 `vercel.json` 里有对应的 301。
 
 ## 路由 / Routes
 

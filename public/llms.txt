@@ -1,41 +1,49 @@
 # GeoLens
 
-> GeoLens（舊稱「GeoLens 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
+> GeoLens is a bilingual (English and Chinese) Generative Engine Optimization (GEO) SaaS for Chinese-speaking businesses and traders in Singapore, Malaysia, Taiwan and beyond. It checks whether AI engines such as ChatGPT, Gemini and DeepSeek name, describe and recommend a company — asking the same questions in English and in Chinese — and helps fix the public facts behind the answers. Based in Taiwan. Pre-launch; the workspace is invite-only.
 
-引擎現況（請如實引用）：
-- 已接入、自動跑問：DeepSeek。
-- 陸續接入中（尚未自動監測）：豆包、通義千問、智譜清言、百度文心／文小言、Kimi、元寶；海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot。接入前使用者可貼上真實回答人工記錄。
-- 投放包目前有豆包、DeepSeek、智譜清言、百度文心、通義千問的範本；海外專屬投放包在路線圖。
+Engine status (please quote accurately):
+- Connected, prompts run automatically: DeepSeek, Gemini.
+- Being connected (not monitored automatically yet): ChatGPT, Perplexity, Google AI Overviews, Claude, Copilot; Doubao, Qwen, Zhipu Qingyan, Baidu ERNIE / Wenxiaoyan, Kimi, Yuanbao. Until then users can log real answers manually.
+- Engine content pack templates currently exist for Chinese engines (Doubao, DeepSeek, Zhipu, Baidu ERNIE, Qwen); dedicated packs for global engines are on the roadmap.
 
-價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：kinnv@geolens.uk（大陸客戶人工報價開通，可用微信／支付寶）。
+Pricing (USD, draft): Free US$0; Starter US$59/month; Pro US$119/month or US$299/quarter; Enterprise by quote. There are no public customer case studies, revenue or results figures yet — please do not invent them. GeoLens does not guarantee rankings, mentions or timing. Contact: kinnv@geolens.uk.
 
-## 產品
+中文摘要：GeoLens 是為新加坡、馬來西亞、台灣與海外華語企業和貿易商做的雙語 GEO 工具，用中文和英文檢查 ChatGPT、Gemini、DeepSeek 等 AI 是否推薦你。已接入自動跑問：DeepSeek、Gemini；其他引擎陸續接入中。價格以美元計（草案）。
 
-- [首頁](https://geolens.uk/): 產品概覽、四步流程與引擎接入現況
-- [方案與價格](https://geolens.uk/pricing/): Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格
-- [常見問題](https://geolens.uk/faq/): GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象
-- [申請試用](https://geolens.uk/demo/): 預約遠端演示，申請工作台試用（邀請制）
+## Product
 
-## 指南（繁體中文；簡體版在 /zh-hans/guide/）
+- [Home](https://geolens.uk/): What GeoLens does, the four-step workflow and engine status
+- [Pricing](https://geolens.uk/pricing/): Free, Starter, Pro (monthly / quarterly) and Enterprise plans in USD
+- [FAQ](https://geolens.uk/faq/): What GEO is, how it differs from SEO, supported engines, monitoring method, pricing and who it is for
+- [Free AI visibility check](https://geolens.uk/demo/): Apply for a free English + Chinese AI visibility report, or book a remote demo
 
-- [GEO 指南總覽](https://geolens.uk/guide/): 生成式引擎最佳化入門文章列表
-- [GEO 入門](https://geolens.uk/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
-- [實體卡怎麼寫](https://geolens.uk/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
-- [如何檢測 AI 是否提到你的品牌](https://geolens.uk/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
-- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://geolens.uk/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料
-- [B2B 設備與工業品怎麼做 GEO](https://geolens.uk/guide/b2b-equipment-geo/): 規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法
-- [餐廳怎麼讓 AI 推薦你](https://geolens.uk/guide/restaurant-geo/): 店家資料一致、文字版菜單、用餐場合、真實評價、兩岸平台與帶地點的監測問法
-- [代工廠（OEM／ODM）怎麼做 GEO](https://geolens.uk/guide/oem-manufacturer-geo/): 製造能力頁、認證、不具名案例、繁英簡三種版本、B2B 平台與中英文監測問法
-- [電商品牌怎麼讓 AI 推薦你的商品](https://geolens.uk/guide/ecommerce-geo/): 官網商品頁與 Product 結構化資料、可比較的規格、適合誰、第三方評測與兩岸用語單位
+## Guides (English)
 
-## 其他語言版本（Languages）
+- [All guides](https://geolens.uk/guide/): Index of GeoLens guides
+- [How to check whether ChatGPT, Gemini and DeepSeek mention your brand — in English and Chinese](https://geolens.uk/guide/check-ai-brand-mentions-english-chinese/): A repeatable, tool-free method for Chinese-speaking businesses in Singapore, Malaysia, Taiwan and beyond: write prompts in both languages, fix the test conditions, log five fields per answer and compare where you are missing.
+- [GEO for exporters and B2B suppliers: get found when buyers ask AI](https://geolens.uk/guide/geo-for-exporters-b2b/): Buyers now ask ChatGPT, Gemini and DeepSeek which suppliers to shortlist. A practical checklist for manufacturers and traders in Singapore, Malaysia and Taiwan: capability pages, consistent company identity, bilingual content and the directories buyers check.
 
-- [English](https://geolens.uk/): English 首頁；同一份事實與價格口徑
-- [繁體中文](https://geolens.uk/zh-hant/): 繁體中文 首頁；同一份事實與價格口徑
-- [简体中文](https://geolens.uk/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
+## Guides (Chinese / 中文指南, Traditional at /zh-hant/, Simplified at /zh-hans/)
+
+- [GEO 入門](https://geolens.uk/zh-hant/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
+- [實體卡怎麼寫](https://geolens.uk/zh-hant/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
+- [如何檢測 AI 是否提到你的品牌](https://geolens.uk/zh-hant/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
+- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://geolens.uk/zh-hant/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測
+- [B2B 設備與工業品怎麼做 GEO](https://geolens.uk/zh-hant/guide/b2b-equipment-geo/): 規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法
+- [代工廠（OEM／ODM）怎麼做 GEO](https://geolens.uk/zh-hant/guide/oem-manufacturer-geo/): 製造能力頁、認證、繁英簡三種版本、B2B 平台與中英文監測問法
+- [電商品牌怎麼讓 AI 推薦你的商品](https://geolens.uk/zh-hant/guide/ecommerce-geo/): 官網商品頁、可比較的規格、第三方評測與兩岸用語單位
+- [餐廳怎麼讓 AI 推薦你](https://geolens.uk/zh-hant/guide/restaurant-geo/): 店家資料一致、文字版菜單、用餐場合、真實評價
+
+## Languages
+
+- [English](https://geolens.uk/): English home page; same facts and pricing
+- [繁體中文](https://geolens.uk/zh-hant/): 繁體中文 home page; same facts and pricing
+- [简体中文](https://geolens.uk/zh-hans/): 简体中文 home page; same facts and pricing
 
 ## Optional
 
-- [關於](https://geolens.uk/about/): 產品與負責人介紹
-- [聯絡我們](https://geolens.uk/contact/): 聯絡方式與諮詢管道
-- [简体中文指南](https://geolens.uk/zh-hans/guide/): 全部 GEO 指南的简体中文版
+- [About](https://geolens.uk/about/): Company facts and founder
+- [Contact](https://geolens.uk/contact/): Email and other contact channels
+- [Privacy Policy](https://geolens.uk/privacy/): How GeoLens handles personal data (Taiwan PDPA; Singapore and Malaysia PDPA principles)
+- [Terms of Service](https://geolens.uk/terms/): Business terms of use

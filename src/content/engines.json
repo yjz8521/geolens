@@ -1,17 +1,109 @@
 {
   "_comment": "Single source of truth for engine status. Set \"live\": true when an engine runs prompts automatically; every {LIVE}/{COMING_CN}/{COMING_GLOBAL} in site copy, guides, FAQ, JSON-LD and llms.txt follows.",
   "engines": [
-    { "id": "deepseek", "region": "cn", "live": true, "zh": "DeepSeek", "hant": "DeepSeek", "en": "DeepSeek" },
-    { "id": "doubao", "region": "cn", "live": false, "zh": "豆包", "hant": "豆包", "en": "Doubao" },
-    { "id": "qwen", "region": "cn", "live": false, "zh": "通义千问", "hant": "通義千問", "en": "Qwen" },
-    { "id": "zhipu", "region": "cn", "live": false, "zh": "智谱清言", "hant": "智譜清言", "en": "Zhipu Qingyan" },
-    { "id": "ernie", "region": "cn", "live": false, "zh": "百度文心／文小言", "hant": "百度文心／文小言", "en": "Baidu ERNIE / Wenxiaoyan" },
-    { "id": "kimi", "region": "cn", "live": false, "zh": "Kimi", "hant": "Kimi", "en": "Kimi" },
-    { "id": "yuanbao", "region": "cn", "live": false, "zh": "元宝", "hant": "元寶", "en": "Yuanbao" },
-    { "id": "chatgpt", "region": "global", "live": false, "zh": "ChatGPT", "hant": "ChatGPT", "en": "ChatGPT" },
-    { "id": "perplexity", "region": "global", "live": false, "zh": "Perplexity", "hant": "Perplexity", "en": "Perplexity" },
-    { "id": "gemini", "region": "global", "live": false, "zh": "Google AI Overviews／Gemini", "hant": "Google AI Overviews／Gemini", "en": "Google AI Overviews / Gemini" },
-    { "id": "claude", "region": "global", "live": false, "zh": "Claude", "hant": "Claude", "en": "Claude" },
-    { "id": "copilot", "region": "global", "live": false, "zh": "Copilot", "hant": "Copilot", "en": "Copilot" }
+    {
+      "id": "deepseek",
+      "region": "cn",
+      "live": true,
+      "zh": "DeepSeek",
+      "hant": "DeepSeek",
+      "en": "DeepSeek"
+    },
+    {
+      "id": "gemini",
+      "region": "global",
+      "live": true,
+      "zh": "Gemini",
+      "hant": "Gemini",
+      "en": "Gemini"
+    },
+    {
+      "id": "chatgpt",
+      "region": "global",
+      "live": false,
+      "zh": "ChatGPT",
+      "hant": "ChatGPT",
+      "en": "ChatGPT"
+    },
+    {
+      "id": "perplexity",
+      "region": "global",
+      "live": false,
+      "zh": "Perplexity",
+      "hant": "Perplexity",
+      "en": "Perplexity"
+    },
+    {
+      "id": "google-aio",
+      "region": "global",
+      "live": false,
+      "zh": "Google AI Overviews",
+      "hant": "Google AI Overviews",
+      "en": "Google AI Overviews"
+    },
+    {
+      "id": "claude",
+      "region": "global",
+      "live": false,
+      "zh": "Claude",
+      "hant": "Claude",
+      "en": "Claude"
+    },
+    {
+      "id": "copilot",
+      "region": "global",
+      "live": false,
+      "zh": "Copilot",
+      "hant": "Copilot",
+      "en": "Copilot"
+    },
+    {
+      "id": "doubao",
+      "region": "cn",
+      "live": false,
+      "zh": "豆包",
+      "hant": "豆包",
+      "en": "Doubao"
+    },
+    {
+      "id": "qwen",
+      "region": "cn",
+      "live": false,
+      "zh": "通义千问",
+      "hant": "通義千問",
+      "en": "Qwen"
+    },
+    {
+      "id": "zhipu",
+      "region": "cn",
+      "live": false,
+      "zh": "智谱清言",
+      "hant": "智譜清言",
+      "en": "Zhipu Qingyan"
+    },
+    {
+      "id": "ernie",
+      "region": "cn",
+      "live": false,
+      "zh": "百度文心／文小言",
+      "hant": "百度文心／文小言",
+      "en": "Baidu ERNIE / Wenxiaoyan"
+    },
+    {
+      "id": "kimi",
+      "region": "cn",
+      "live": false,
+      "zh": "Kimi",
+      "hant": "Kimi",
+      "en": "Kimi"
+    },
+    {
+      "id": "yuanbao",
+      "region": "cn",
+      "live": false,
+      "zh": "元宝",
+      "hant": "元寶",
+      "en": "Yuanbao"
+    }
   ]
 }
