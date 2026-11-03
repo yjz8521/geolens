@@ -1,13 +1,63 @@
 {
   "redirects": [
     {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/guide/geo-intro",
+      "destination": "/zh-hant/guide/geo-intro/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/entity-card",
+      "destination": "/zh-hant/guide/entity-card/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/monitor-ai-mentions",
+      "destination": "/zh-hant/guide/monitor-ai-mentions/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/deepseek-self-check",
+      "destination": "/zh-hant/guide/deepseek-self-check/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/b2b-equipment-geo",
+      "destination": "/zh-hant/guide/b2b-equipment-geo/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/restaurant-geo",
+      "destination": "/zh-hant/guide/restaurant-geo/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/oem-manufacturer-geo",
+      "destination": "/zh-hant/guide/oem-manufacturer-geo/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/ecommerce-geo",
+      "destination": "/zh-hant/guide/ecommerce-geo/",
+      "permanent": true
+    },
+    {
       "source": "/:lang(ms|ja|ko)",
-      "destination": "/en/",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/:lang(ms|ja|ko)/:path*",
-      "destination": "/en/:path*",
+      "destination": "/:path*",
       "permanent": true
     },
     {
@@ -16,18 +66,8 @@
       "permanent": true
     },
     {
-      "source": "/sponsor/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(zh-hans|en)/sponsor",
-      "destination": "/:lang/",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(zh-hans|en)/sponsor/",
-      "destination": "/:lang/",
+      "source": "/zh-hans/sponsor",
+      "destination": "/zh-hans/",
       "permanent": true
     }
   ]

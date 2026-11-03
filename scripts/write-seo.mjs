@@ -17,13 +17,14 @@ const siteUrl = (
   "https://geolens.uk"
 ).replace(/\/$/, "");
 
+// English is served at the root (x-default); Chinese under /zh-hant/ and /zh-hans/. Keep in sync with src/lib/locales.ts.
 const LOCALES = [
-  { code: "zh-hant", prefix: "", hreflang: "zh-Hant", label: "繁體中文" },
+  { code: "en", prefix: "", hreflang: "en", label: "English" },
+  { code: "zh-hant", prefix: "/zh-hant", hreflang: "zh-Hant", label: "繁體中文" },
   { code: "zh-hans", prefix: "/zh-hans", hreflang: "zh-Hans", label: "简体中文" },
-  { code: "en", prefix: "/en", hreflang: "en", label: "English" },
 ];
 // Guide slugs + publish dates come from src/content/geo.ts so the sitemap never drifts from the content.
-const GUIDES = [...readFileSync(join(root, "src/content/geo.ts"), "utf8").matchAll(/slug: "([^"]+)",\s*date: "(\d{4}-\d{2}-\d{2})"/g)].map((m) => ({ slug: m[1], date: m[2] }));
+const GUIDES = [...readFileSync(join(root, "src/content/geo.ts"), "utf8").matchAll(/slug: "([^"]+)",\s*date: "(\d{4}-\d{2}-\d{2})",(\s*lang: "en",)?/g)].map((m) => ({ slug: m[1], date: m[2], en: Boolean(m[3]) }));
 if (!GUIDES.length) throw new Error("[write-seo] no guides found in src/content/geo.ts");
 const latestGuide = GUIDES.map((g) => g.date).sort().at(-1);
 const today = new Date().toISOString().slice(0, 10);
@@ -31,7 +32,7 @@ const today = new Date().toISOString().slice(0, 10);
 const pages = [
   ...["/", "/pricing/", "/faq/", "/demo/", "/about/", "/contact/", "/privacy/", "/terms/"].map((p) => [p, LOCALES, today]),
   ["/guide/", LOCALES, latestGuide],
-  ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => l.code.startsWith("zh")), g.date]),
+  ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => (l.code === "en") === g.en), g.date]),
 ];
 const urls = [];
 for (const [p, locs, lastmod] of pages) {

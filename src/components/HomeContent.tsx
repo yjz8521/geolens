@@ -8,7 +8,7 @@ import { comingEngines, engineName, liveEngines } from "@/lib/engines";
 import { tr } from "@/lib/locales";
 import { checkDeliveryDays, draftPlans, getAppUrl } from "@/lib/site";
 
-export type GuideCard = { slug: string; title: string; description: string; date: string };
+export type GuideCard = { slug: string; title: string; description: string; date: string; lang?: "en" };
 
 const steps = [
   {
@@ -157,7 +157,10 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
   const { t, locale, p: lpath } = useI18n();
   const appUrl = getAppUrl();
   const teaser = draftPlans.filter((p) => p.code === "starter" || p.code === "pro");
-  const guideHref = (slug: string) => (locale === "zh-hans" ? `/zh-hans/guide/${slug}/` : `/guide/${slug}/`);
+  // English readers see English guides; Chinese readers see Chinese ones (guides exist in one language family).
+  const isEn = (g: GuideCard) => g.lang === "en";
+  const shown = guides.filter((g) => isEn(g) === (locale === "en")).slice(0, 3);
+  const guideHref = (g: GuideCard) => lpath(`/guide/${g.slug}/`);
 
   return (
     <>
@@ -357,7 +360,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       </Section>
 
       {/* Guides */}
-      {guides.length ? (
+      {shown.length ? (
         <div className="border-y border-zinc-200 bg-zinc-50">
           <Section>
             <div className="flex flex-wrap items-end justify-between gap-4">
@@ -368,13 +371,13 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
               <Link href={lpath("/guide/")} className="text-sm font-semibold text-zinc-950 hover:underline">{t("看全部指南", "All guides")} →</Link>
             </div>
             <ul className="mt-10 grid gap-5 md:grid-cols-3">
-              {guides.map((g) => (
+              {shown.map((g) => (
                 <li key={g.slug}>
-                  <Link href={guideHref(g.slug)} hrefLang={locale === "en" ? "zh-Hant" : undefined} className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5">
+                  <Link href={guideHref(g)} className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5">
                     <time dateTime={g.date} className="text-xs text-zinc-400">{g.date}</time>
                     <h3 className="mt-2 font-semibold leading-snug text-zinc-950 group-hover:text-blue-600">{tr(locale, g.title)}</h3>
                     <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-zinc-600">{tr(locale, g.description)}</p>
-                    <span className="mt-4 text-sm font-medium text-blue-600">{t("阅读", "Read")}{locale === "en" ? " (中文)" : ""} →</span>
+                    <span className="mt-4 text-sm font-medium text-blue-600">{t("阅读", "Read")} →</span>
                   </Link>
                 </li>
               ))}

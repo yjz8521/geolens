@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PREFIXED, isLocale } from "@/lib/locales";
+import { DEFAULT_LOCALE, PREFIXED, isLocale } from "@/lib/locales";
 import { RootShell, rootMetadata } from "@/views/Shell";
 import "../globals.css";
 
@@ -16,6 +16,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function LangLayout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  if (!isLocale(lang) || lang === "zh-hant") notFound();
+  if (!isLocale(lang) || lang === DEFAULT_LOCALE) notFound();
   return <RootShell locale={lang}>{children}</RootShell>;
 }

@@ -1,3 +1,4 @@
+import type { Locale } from "@/lib/locales";
 export const faqs: { q: string; a: string }[] = [
   { q: "什么是 GEO（生成式引擎优化）？", a: "GEO（Generative Engine Optimization，生成式引擎优化）是让品牌在生成式 AI 的回答中被准确提及和推荐的方法，对象包括国内引擎（豆包、DeepSeek、通义千问、智谱清言、百度文心／文小言、Kimi、元宝）与海外引擎（ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot）。核心是提供一致、可验证、易被引用的品牌事实，并发布到 AI 会读取的公开渠道。" },
   { q: "GEO 和 SEO 有什么差别？", a: "SEO 的目标是让网页在搜索结果列表中排名靠前；GEO 的目标是让 AI 在直接生成的答案里点名你的品牌。SEO 看关键词与外链，GEO 更看重实体事实是否一致、内容是否结构清晰可引用、以及第三方渠道（如知乎、头条、官网）是否有相同口径的描述。两者互补，不互相取代。" },
@@ -10,7 +11,10 @@ export const faqs: { q: string; a: string }[] = [
   { q: "GeoLens 和 GEO 代运营有什么不同？", a: "GeoLens 是自助工具：投放包目前有豆包、DeepSeek、通义千问、智谱清言、百度文心的模板，自动监测目前已接入 {LIVE}；其他国内引擎与海外引擎（{COMING_GLOBAL}）陆续接入中，海外专属投放包在路线图。由你的团队自助操作，价格低于代运营。" },
 ];
 
-export type Guide = { slug: string; date: string; title: string; description: string; sections: { h: string; p: string[] }[] };
+/** `lang: "en"` marks an English-only guide (served at /guide/…); others are Chinese, served at /zh-hant/ and /zh-hans/. */
+export type Guide = { slug: string; date: string; lang?: "en"; title: string; description: string; sections: { h: string; p: string[] }[] };
+
+export const guideLocales = (g: Pick<Guide, "lang">): Locale[] => (g.lang === "en" ? ["en"] : ["zh-hant", "zh-hans"]);
 
 export const guides: Guide[] = [
   {
@@ -127,6 +131,39 @@ export const guides: Guide[] = [
       { h: "第五步：把常见问题写进商品页", p: ["把客服最常被问的问题写进商品页的 FAQ：「耗材多久换一次、多少钱」「保修怎么申请」「和上一代差在哪」。答案第一句直接回答，并写出品牌与型号全名。"] },
       { h: "第六步：两岸分开准备、分开监测", p: ["如果也卖大陆，简体商品页的用语与单位要按大陆习惯（平方米、包邮、售后），大陆消费者也常在小红书、知乎、什么值得买看评价。监测时准备「预算＋品类」「对比」「品牌直问」三类问法，繁体与简体各一组，每周复测。方法可以参考〈如何检测 AI 是否提到你的品牌〉。"] },
       { h: "说明", p: ["本文是方法整理，不保证做完一定会被推荐，也没有可公开的客户案例。GeoLens 目前正式接入、能自动跑问的只有 {LIVE}，其他引擎陆续接入中。"] },
+    ],
+  },
+  {
+    slug: "check-ai-brand-mentions-english-chinese",
+    date: "2026-11-03",
+    lang: "en",
+    title: "How to check whether ChatGPT, Gemini and DeepSeek mention your brand — in English and Chinese",
+    description: "A repeatable, tool-free method for Chinese-speaking businesses in Singapore, Malaysia, Taiwan and beyond: write prompts in both languages, fix the test conditions, log five fields per answer and compare where you are missing.",
+    sections: [
+      { h: "Why test in two languages", p: ["Your customers may ask the same question in English one day and in Chinese the next. AI engines often answer the two very differently: a brand that appears for “best food packaging supplier in Malaysia” can be missing for “马来西亚有哪些食品包装供应商”, or the other way round. If you only test one language, you only see half of the picture.", "The method below takes about an hour and a spreadsheet. GeoLens automates part of it ({LIVE} today; other engines are being connected), but everything here can be done by hand."] },
+      { h: "Step 1: write 10 prompts, then translate them", p: ["Cover three kinds of question. Category: “Which suppliers in Singapore make X?”. Use case: “I need X for Y with a budget of Z — who should I talk to?”. Brand: “What is <your brand>?” and “<your brand> vs <competitor>”.", "Then write the same 10 questions in Chinese. Use the script and wording your customers actually use — Simplified Chinese for Singapore, Malaysia and mainland China buyers, Traditional Chinese for Taiwan and Hong Kong. Do not machine-translate word for word; rewrite them the way a customer would type them."] },
+      { h: "Step 2: fix the test conditions", p: ["Start a new chat for every prompt and note whether web search was on. Answers with web search usually cite live pages; answers without it rely on what the model already knows. Both matter, but never mix them in the same column.", "Use the same engines every time — for example ChatGPT, Gemini and DeepSeek — and write down the date."] },
+      { h: "Step 3: ask each prompt at least twice", p: ["AI answers vary. A brand named once and missing the next time is normal, so a single answer proves nothing. Ask every prompt two or three times per engine and language."] },
+      { h: "Step 4: log five fields per answer", p: ["Named (yes/no, and which name was used); position in the list; whether the description is accurate (location, products, prices); which sources were cited; and which competitors were named instead.", "Mention rate = answers that named you ÷ answers you collected. Keep English and Chinese results in separate columns so you can compare them. A direct question such as “What is <brand>?” only counts as a mention if the answer actually describes you, not if it repeats the name and says it found nothing."] },
+      { h: "Step 5: read the gaps", p: ["Missing in both languages usually means there is too little consistent public information about you. Missing in Chinese only often means your Chinese pages are thin, machine-translated, or use the wrong script for that market. Missing in English only often means your English site is too short or your company name differs across directories and registries.", "Wrong facts — an old address, a discontinued product — are a signal too: AI is reading something outdated about you."] },
+      { h: "Step 6: fix the source, then re-test weekly", p: ["Publish one consistent set of facts in both languages: a one-line definition of what you do, who you serve, where you operate, your main products and what makes you different. Put it on crawlable pages that need no login, and keep your company name identical across your website, LinkedIn, business directories and marketplaces.", "Re-run the same prompts every week under the same conditions and look at the trend, not a single result. This is a method, not a guarantee: no one can promise that an AI engine will recommend a brand."] },
+    ],
+  },
+  {
+    slug: "geo-for-exporters-b2b",
+    date: "2026-11-03",
+    lang: "en",
+    title: "GEO for exporters and B2B suppliers: get found when buyers ask AI",
+    description: "Buyers now ask ChatGPT, Gemini and DeepSeek which suppliers to shortlist. A practical checklist for manufacturers and traders in Singapore, Malaysia and Taiwan: capability pages, consistent company identity, bilingual content and the directories buyers check.",
+    sections: [
+      { h: "How buyers ask", p: ["B2B questions are specific: “Which Malaysian manufacturers make stainless steel food machinery?”, “OEM skincare factories in Taiwan with a low MOQ”, “Singapore suppliers with ISO 13485”. Buyers from mainland China may ask the same thing in Chinese on DeepSeek; buyers in Europe or the Middle East ask in English on ChatGPT or Gemini. To be shortlisted, the facts that answer these questions need to be public and easy to quote."] },
+      { h: "1. Publish a capability page, not a brochure", p: ["One page per product line with the facts a buyer filters on: processes and equipment, materials, size or tolerance ranges, minimum order quantity, monthly capacity, sampling time and production lead time, and the markets you already ship to. Write it as web text — specifications locked inside images are usually invisible to AI, and PDFs are best mirrored as a web page.", "Use ranges where you need to, but keep every number true. Leave out anything you cannot back up."] },
+      { h: "2. List certifications and quality steps", p: ["Name the certifications you actually hold (for example ISO 9001, IATF 16949, ISO 13485, HACCP or halal certification) with their validity, and describe your inspection process. Certifications are a common filter in buyer questions, so they are a common reason a supplier gets named — or left out."] },
+      { h: "3. Keep one company identity everywhere", p: ["Use the same company name, address and description on your website, LinkedIn, trade directories and marketplaces, and make it match your registered entity (ACRA in Singapore, SSM in Malaysia, the company registry in Taiwan). If you trade under a brand name that differs from the registered name, say so on your About page. Inconsistent names are one of the most common reasons AI engines treat one supplier as two, or as none."] },
+      { h: "4. Write in English, plus the Chinese your buyers read", p: ["English is the baseline for international buyers. If you also sell to Chinese-speaking buyers, add a Chinese version written for them: Simplified Chinese and mainland wording for mainland China, Singapore and Malaysia (for example 定制 rather than 客製化, 质量 rather than 品質), Traditional Chinese for Taiwan and Hong Kong. Link the language versions to each other with hreflang so search engines and AI crawlers know they describe the same company."] },
+      { h: "5. Be present where buyers check", p: ["Beyond your own site, keep consistent profiles on the platforms buyers in your industry use — for example Alibaba.com, Taiwantrade, and member directories of industry bodies such as the Singapore Manufacturing Federation or the Federation of Malaysian Manufacturers. Trade-show exhibitor pages and association listings are public, crawlable and often cited."] },
+      { h: "6. Describe projects without naming clients", p: ["Most OEM and B2B work is under NDA. You can still write “aluminium components for a European bicycle brand, 20,000 units a month” without naming the client. Publish named case studies only with written permission."] },
+      { h: "7. Monitor in both languages", p: ["Track a fixed set of prompts in English and Chinese — category + location, material or process, certification, and low-MOQ questions — and re-test weekly under the same conditions. The companion guide on checking AI brand mentions explains the logging method. GeoLens runs these prompts automatically on {LIVE} today; other engines are being connected. No method can guarantee that an AI engine will recommend you."] },
     ],
   },
 ];

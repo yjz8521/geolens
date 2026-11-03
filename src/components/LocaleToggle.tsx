@@ -12,9 +12,10 @@ function basePath(pathname: string | null) {
   return p || "/";
 }
 
-/** Guide articles exist only in Chinese; other locales fall back to their guide index. */
-function target(l: Locale, base: string) {
-  if (base.startsWith("/guide/") && base !== "/guide/" && !l.startsWith("zh")) return lp(l, "/guide/");
+/** Guide articles exist either in English or in Chinese (both scripts); crossing that line lands on the guide index. */
+function target(l: Locale, base: string, current: Locale) {
+  const article = base.startsWith("/guide/") && base !== "/guide/";
+  if (article && (l === "en") !== (current === "en")) return lp(l, "/guide/");
   return lp(l, base);
 }
 
@@ -49,7 +50,7 @@ export function LocaleToggle() {
             <li key={l} role="none">
               <a
                 role="menuitem"
-                href={target(l, base)}
+                href={target(l, base, locale)}
                 hrefLang={LOCALE_META[l].hreflang}
                 lang={LOCALE_META[l].html}
                 aria-current={l === locale ? "true" : undefined}

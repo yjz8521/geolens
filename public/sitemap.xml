@@ -2,416 +2,432 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://geolens.uk/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/"/>
   </url>
   <url>
     <loc>https://geolens.uk/pricing/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/pricing/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/pricing/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/pricing/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/pricing/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/pricing/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/pricing/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/pricing/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/pricing/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/pricing/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/pricing/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/pricing/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/pricing/"/>
   </url>
   <url>
     <loc>https://geolens.uk/faq/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/faq/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/faq/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/faq/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/faq/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/faq/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/faq/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/faq/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/faq/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/faq/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/faq/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/faq/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/faq/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/faq/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/faq/"/>
   </url>
   <url>
     <loc>https://geolens.uk/demo/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/demo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/demo/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/demo/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/demo/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/demo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/demo/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/demo/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/demo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/demo/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/demo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/demo/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/demo/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/demo/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/demo/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/demo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/demo/"/>
   </url>
   <url>
     <loc>https://geolens.uk/about/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/about/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/about/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/about/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/about/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/about/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/about/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/about/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/about/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/about/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/about/"/>
   </url>
   <url>
     <loc>https://geolens.uk/contact/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/contact/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/contact/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/contact/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/contact/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/contact/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/contact/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/contact/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/contact/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/contact/"/>
   </url>
   <url>
     <loc>https://geolens.uk/privacy/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/privacy/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/privacy/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/privacy/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/privacy/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/privacy/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/privacy/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/privacy/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/privacy/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/privacy/"/>
   </url>
   <url>
     <loc>https://geolens.uk/terms/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/terms/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/terms/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/terms/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/terms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/terms/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/terms/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/terms/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/terms/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/en/terms/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/terms/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/terms/"/>
   </url>
   <url>
     <loc>https://geolens.uk/guide/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/zh-hant/guide/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/guide/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/en/guide/</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/en/guide/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/"/>
-  </url>
-  <url>
-    <loc>https://geolens.uk/guide/geo-intro/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/geo-intro/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/geo-intro/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/geo-intro/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/geo-intro/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/geo-intro/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/geo-intro/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/geo-intro/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/geo-intro/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/entity-card/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/entity-card/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/entity-card/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/entity-card/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/entity-card/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/entity-card/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/entity-card/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/entity-card/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/entity-card/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/monitor-ai-mentions/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/monitor-ai-mentions/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/monitor-ai-mentions/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/monitor-ai-mentions/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/monitor-ai-mentions/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/monitor-ai-mentions/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/monitor-ai-mentions/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/monitor-ai-mentions/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/monitor-ai-mentions/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/deepseek-self-check/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/deepseek-self-check/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/deepseek-self-check/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/deepseek-self-check/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/deepseek-self-check/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/deepseek-self-check/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/deepseek-self-check/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/deepseek-self-check/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/deepseek-self-check/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/b2b-equipment-geo/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/b2b-equipment-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/b2b-equipment-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/b2b-equipment-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/b2b-equipment-geo/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/b2b-equipment-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/b2b-equipment-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/b2b-equipment-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/b2b-equipment-geo/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/restaurant-geo/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/restaurant-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/restaurant-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/restaurant-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/restaurant-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/restaurant-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/restaurant-geo/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/restaurant-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/restaurant-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/restaurant-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/restaurant-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/restaurant-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/restaurant-geo/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/oem-manufacturer-geo/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/oem-manufacturer-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/oem-manufacturer-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/oem-manufacturer-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/oem-manufacturer-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/oem-manufacturer-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/oem-manufacturer-geo/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/oem-manufacturer-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/oem-manufacturer-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/oem-manufacturer-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/oem-manufacturer-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/oem-manufacturer-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/oem-manufacturer-geo/"/>
   </url>
   <url>
-    <loc>https://geolens.uk/guide/ecommerce-geo/</loc>
+    <loc>https://geolens.uk/zh-hant/guide/ecommerce-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/ecommerce-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/ecommerce-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/ecommerce-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/ecommerce-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/ecommerce-geo/"/>
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/guide/ecommerce-geo/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/guide/ecommerce-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://geolens.uk/zh-hant/guide/ecommerce-geo/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://geolens.uk/zh-hans/guide/ecommerce-geo/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/ecommerce-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/zh-hant/guide/ecommerce-geo/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/guide/check-ai-brand-mentions-english-chinese/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/guide/check-ai-brand-mentions-english-chinese/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/check-ai-brand-mentions-english-chinese/"/>
+  </url>
+  <url>
+    <loc>https://geolens.uk/guide/geo-for-exporters-b2b/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/guide/geo-for-exporters-b2b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://geolens.uk/guide/geo-for-exporters-b2b/"/>
   </url>
 </urlset>

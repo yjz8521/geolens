@@ -30,9 +30,9 @@
 
 ## 其他語言版本（Languages）
 
-- [繁體中文](https://geolens.uk/): 繁體中文 首頁；同一份事實與價格口徑
+- [English](https://geolens.uk/): English 首頁；同一份事實與價格口徑
+- [繁體中文](https://geolens.uk/zh-hant/): 繁體中文 首頁；同一份事實與價格口徑
 - [简体中文](https://geolens.uk/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
-- [English](https://geolens.uk/en/): English 首頁；同一份事實與價格口徑
 
 ## Optional
 
