@@ -4,8 +4,9 @@ import { fillEngines } from "./engines";
 
 export const LOCALES = ["zh-hant", "zh-hans", "en"] as const;
 export type Locale = (typeof LOCALES)[number];
-export const PREFIXED = LOCALES.filter((l) => l !== "zh-hant");
-export const DEFAULT_LOCALE: Locale = "zh-hant";
+/** Served at the site root (no prefix). English first: SEA Chinese businesses and traders all read it. */
+export const DEFAULT_LOCALE: Locale = "en";
+export const PREFIXED = LOCALES.filter((l) => l !== DEFAULT_LOCALE);
 
 export const LOCALE_META: Record<Locale, { label: string; html: string; og: string; hreflang: string }> = {
   "zh-hant": { label: "繁體中文", html: "zh-Hant-TW", og: "zh_TW", hreflang: "zh-Hant" },
@@ -19,7 +20,7 @@ export function isLocale(x: string): x is Locale {
   return (LOCALES as readonly string[]).includes(x);
 }
 
-/** Path prefix for a locale ("" for default zh-hant). */
+/** Path prefix for a locale ("" for the default locale). */
 export function prefix(l: Locale) {
   return l === DEFAULT_LOCALE ? "" : `/${l}`;
 }

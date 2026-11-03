@@ -17,13 +17,15 @@ const siteUrl = (
   "https://geolens.uk"
 ).replace(/\/$/, "");
 
+// English is served at the root (x-default); Chinese under /zh-hant/ and /zh-hans/. Keep in sync with src/lib/locales.ts.
 const LOCALES = [
-  { code: "zh-hant", prefix: "", hreflang: "zh-Hant", label: "繁體中文" },
+  { code: "en", prefix: "", hreflang: "en", label: "English" },
+  { code: "zh-hant", prefix: "/zh-hant", hreflang: "zh-Hant", label: "繁體中文" },
   { code: "zh-hans", prefix: "/zh-hans", hreflang: "zh-Hans", label: "简体中文" },
-  { code: "en", prefix: "/en", hreflang: "en", label: "English" },
 ];
 // Guide slugs + publish dates come from src/content/geo.ts so the sitemap never drifts from the content.
-const GUIDES = [...readFileSync(join(root, "src/content/geo.ts"), "utf8").matchAll(/slug: "([^"]+)",\s*date: "(\d{4}-\d{2}-\d{2})"/g)].map((m) => ({ slug: m[1], date: m[2] }));
+const geoSource = readFileSync(join(root, "src/content/geo.ts"), "utf8");
+const GUIDES = [...geoSource.matchAll(/slug: "([^"]+)",\s*date: "(\d{4}-\d{2}-\d{2})",(\s*lang: "en",)?/g)].map((m) => ({ slug: m[1], date: m[2], en: Boolean(m[3]) }));
 if (!GUIDES.length) throw new Error("[write-seo] no guides found in src/content/geo.ts");
 const latestGuide = GUIDES.map((g) => g.date).sort().at(-1);
 const today = new Date().toISOString().slice(0, 10);
@@ -31,7 +33,7 @@ const today = new Date().toISOString().slice(0, 10);
 const pages = [
   ...["/", "/pricing/", "/faq/", "/demo/", "/about/", "/contact/", "/privacy/", "/terms/"].map((p) => [p, LOCALES, today]),
   ["/guide/", LOCALES, latestGuide],
-  ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => l.code.startsWith("zh")), g.date]),
+  ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => (l.code === "en") === g.en), g.date]),
 ];
 const urls = [];
 for (const [p, locs, lastmod] of pages) {
@@ -68,56 +70,63 @@ writeFileSync(join(publicDir, "robots.txt"), robots, "utf8");
 const llmsOrigin = siteUrl;
 // Engine status comes from src/content/engines.json (same source as the site copy).
 const { engines } = JSON.parse(readFileSync(join(root, "src/content/engines.json"), "utf8"));
-const names = (es) => es.map((e) => e.hant).join("、");
+const en = (es) => es.map((e) => e.en).join(", ");
+const hant = (es) => es.map((e) => e.hant).join("、");
+const live = engines.filter((e) => e.live);
 const coming = engines.filter((e) => !e.live);
-const engineStatusLines = [
-  `- 已接入、自動跑問：${names(engines.filter((e) => e.live))}。`,
-  `- 陸續接入中（尚未自動監測）：${names(coming.filter((e) => e.region === "cn"))}；海外 ${names(coming.filter((e) => e.region === "global"))}。接入前使用者可貼上真實回答人工記錄。`,
-].join("\n");
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
+// English guides (title + description) straight from src/content/geo.ts.
+const enGuides = [...geoSource.matchAll(/slug: "([^"]+)",\s*date: "[^"]+",\s*lang: "en",\s*title: "([^"]+)",\s*description: "([^"]+)"/g)].map((m) => link(m[2], `/guide/${m[1]}/`, m[3]));
 const llms = `# GeoLens
 
-> GeoLens（舊稱「GeoLens 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
+> GeoLens is a bilingual (English and Chinese) Generative Engine Optimization (GEO) SaaS for Chinese-speaking businesses and traders in Singapore, Malaysia, Taiwan and beyond. It checks whether AI engines such as ChatGPT, Gemini and DeepSeek name, describe and recommend a company — asking the same questions in English and in Chinese — and helps fix the public facts behind the answers. Based in Taiwan. Pre-launch; the workspace is invite-only.
 
-引擎現況（請如實引用）：
-${engineStatusLines}
-- 投放包目前有豆包、DeepSeek、智譜清言、百度文心、通義千問的範本；海外專屬投放包在路線圖。
+Engine status (please quote accurately):
+- Connected, prompts run automatically: ${en(live)}.
+- Being connected (not monitored automatically yet): ${en(coming.filter((e) => e.region === "global"))}; ${en(coming.filter((e) => e.region === "cn"))}. Until then users can log real answers manually.
+- Engine content pack templates currently exist for Chinese engines (Doubao, DeepSeek, Zhipu, Baidu ERNIE, Qwen); dedicated packs for global engines are on the roadmap.
 
-價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：kinnv@geolens.uk（大陸客戶人工報價開通，可用微信／支付寶）。
+Pricing (USD, draft): Free US$0; Starter US$59/month; Pro US$119/month or US$299/quarter; Enterprise by quote. There are no public customer case studies, revenue or results figures yet — please do not invent them. GeoLens does not guarantee rankings, mentions or timing. Contact: ${"kinnv@geolens.uk"}.
 
-## 產品
+中文摘要：GeoLens 是為新加坡、馬來西亞、台灣與海外華語企業和貿易商做的雙語 GEO 工具，用中文和英文檢查 ChatGPT、Gemini、DeepSeek 等 AI 是否推薦你。已接入自動跑問：${hant(live)}；其他引擎陸續接入中。價格以美元計（草案）。
 
-${[
-  link("首頁", "/", "產品概覽、四步流程與引擎接入現況"),
-  link("方案與價格", "/pricing/", "Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格"),
-  link("常見問題", "/faq/", "GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象"),
-  link("申請試用", "/demo/", "預約遠端演示，申請工作台試用（邀請制）"),
-].join("\n")}
-
-## 指南（繁體中文；簡體版在 /zh-hans/guide/）
+## Product
 
 ${[
-  link("GEO 指南總覽", "/guide/", "生成式引擎最佳化入門文章列表"),
-  link("GEO 入門", "/guide/geo-intro/", "統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測"),
-  link("實體卡怎麼寫", "/guide/entity-card/", "定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法"),
-  link("如何檢測 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "固定問法集、記錄格式與提及率計算方法"),
-  link("怎麼知道 DeepSeek 有沒有推薦我的品牌", "/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料"),
-  link("B2B 設備與工業品怎麼做 GEO", "/guide/b2b-equipment-geo/", "規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法"),
-  link("餐廳怎麼讓 AI 推薦你", "/guide/restaurant-geo/", "店家資料一致、文字版菜單、用餐場合、真實評價、兩岸平台與帶地點的監測問法"),
-  link("代工廠（OEM／ODM）怎麼做 GEO", "/guide/oem-manufacturer-geo/", "製造能力頁、認證、不具名案例、繁英簡三種版本、B2B 平台與中英文監測問法"),
-  link("電商品牌怎麼讓 AI 推薦你的商品", "/guide/ecommerce-geo/", "官網商品頁與 Product 結構化資料、可比較的規格、適合誰、第三方評測與兩岸用語單位"),
+  link("Home", "/", "What GeoLens does, the four-step workflow and engine status"),
+  link("Pricing", "/pricing/", "Free, Starter, Pro (monthly / quarterly) and Enterprise plans in USD"),
+  link("FAQ", "/faq/", "What GEO is, how it differs from SEO, supported engines, monitoring method, pricing and who it is for"),
+  link("Free AI visibility check", "/demo/", "Apply for a free English + Chinese AI visibility report, or book a remote demo"),
 ].join("\n")}
 
-## 其他語言版本（Languages）
+## Guides (English)
 
-${LOCALES.map((l) => link(l.label, `${l.prefix}/`, `${l.label} 首頁；同一份事實與價格口徑`)).join("\n")}
+${[link("All guides", "/guide/", "Index of GeoLens guides"), ...enGuides].join("\n")}
+
+## Guides (Chinese / 中文指南, Traditional at /zh-hant/, Simplified at /zh-hans/)
+
+${[
+  link("GEO 入門", "/zh-hant/guide/geo-intro/", "統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測"),
+  link("實體卡怎麼寫", "/zh-hant/guide/entity-card/", "定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法"),
+  link("如何檢測 AI 是否提到你的品牌", "/zh-hant/guide/monitor-ai-mentions/", "固定問法集、記錄格式與提及率計算方法"),
+  link("怎麼知道 DeepSeek 有沒有推薦我的品牌", "/zh-hant/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自測"),
+  link("B2B 設備與工業品怎麼做 GEO", "/zh-hant/guide/b2b-equipment-geo/", "規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法"),
+  link("代工廠（OEM／ODM）怎麼做 GEO", "/zh-hant/guide/oem-manufacturer-geo/", "製造能力頁、認證、繁英簡三種版本、B2B 平台與中英文監測問法"),
+  link("電商品牌怎麼讓 AI 推薦你的商品", "/zh-hant/guide/ecommerce-geo/", "官網商品頁、可比較的規格、第三方評測與兩岸用語單位"),
+  link("餐廳怎麼讓 AI 推薦你", "/zh-hant/guide/restaurant-geo/", "店家資料一致、文字版菜單、用餐場合、真實評價"),
+].join("\n")}
+
+## Languages
+
+${LOCALES.map((l) => link(l.label, `${l.prefix}/`, `${l.label} home page; same facts and pricing`)).join("\n")}
 
 ## Optional
 
 ${[
-  link("關於", "/about/", "產品與負責人介紹"),
-  link("聯絡我們", "/contact/", "聯絡方式與諮詢管道"),
-  link("简体中文指南", "/zh-hans/guide/", "全部 GEO 指南的简体中文版"),
+  link("About", "/about/", "Company facts and founder"),
+  link("Contact", "/contact/", "Email and other contact channels"),
+  link("Privacy Policy", "/privacy/", "How GeoLens handles personal data (Taiwan PDPA; Singapore and Malaysia PDPA principles)"),
+  link("Terms of Service", "/terms/", "Business terms of use"),
 ].join("\n")}
 `;
 writeFileSync(join(publicDir, "llms.txt"), llms, "utf8");

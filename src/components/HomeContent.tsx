@@ -8,7 +8,7 @@ import { comingEngines, engineName, liveEngines } from "@/lib/engines";
 import { tr } from "@/lib/locales";
 import { checkDeliveryDays, draftPlans, getAppUrl } from "@/lib/site";
 
-export type GuideCard = { slug: string; title: string; description: string; date: string };
+export type GuideCard = { slug: string; title: string; description: string; date: string; lang?: "en" };
 
 const steps = [
   {
@@ -24,16 +24,16 @@ const steps = [
     icon: "layers",
     zh: "生成引擎投放包",
     en: "Engine packs",
-    dZh: "对豆包 / DeepSeek / 智谱 / 百度 / 千问产出标题、大纲与渠道清单；海外引擎沿用同一实体事实。",
-    dEn: "Titles, outlines, and channel lists for each CN engine; global engines reuse the same entity facts.",
+    dZh: "按引擎与语言产出标题、大纲与发布渠道清单；ChatGPT、Gemini、DeepSeek 等共用同一份实体事实。",
+    dEn: "Titles, outlines and channel lists per engine and language — ChatGPT, Gemini, DeepSeek and others all draw on the same entity facts.",
   },
   {
     n: "03",
     icon: "send",
     zh: "发布到渠道",
     en: "Publish",
-    dZh: "推到创作者草稿箱与品牌 CMS，按 P0/P1 渠道推进。",
-    dEn: "Push to creator drafts and brand CMS along P0/P1 channels.",
+    dZh: "发布到官网、LinkedIn、行业名录等 AI 会读取的公开渠道。",
+    dEn: "Publish to your website, LinkedIn, directories and other public channels AI engines read.",
   },
   {
     n: "04",
@@ -47,7 +47,7 @@ const steps = [
 
 const problems = [
   { icon: "eyeOff", zh: "SEO 够了，生成式引擎里却搜不到你", en: "SEO is fine — generative engines never name you" },
-  { icon: "shuffle", zh: "各家引擎问法不同，人工投放难以规模化", en: "Many engines, many prompt styles — manual GEO does not scale" },
+  { icon: "shuffle", zh: "用英文问有提到你，用中文问却没有（或反过来）", en: "Named in English answers, missing in Chinese ones — or the other way round" },
   { icon: "gauge", zh: "没有提及率、引用与竞品缺口数据", en: "No mention rate, citation, or competitor-gap metrics" },
 ] as const;
 
@@ -102,7 +102,7 @@ function Icon({ name, className = "h-5 w-5" }: { name: string; className?: strin
 /** Illustrative AI answer (not a real result) — shows what "being named and cited" looks like. */
 function AnswerMock() {
   const { t } = useI18n();
-  const tabs = ["DeepSeek", t("豆包", "Doubao"), "ChatGPT"];
+  const tabs = ["Gemini", "DeepSeek", "ChatGPT"];
   return (
     <div className="relative">
       <div aria-hidden className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-blue-200/60 via-sky-100/40 to-transparent blur-2xl" />
@@ -121,24 +121,24 @@ function AnswerMock() {
         </div>
         <div className="space-y-4 p-5 text-sm">
           <p className="ml-auto w-fit max-w-[85%] rounded-2xl rounded-br-md bg-zinc-100 px-4 py-2.5 text-zinc-800">
-            {t("台湾有哪些值得推荐的机能服饰品牌？", "Which Taiwan functional apparel brands would you recommend?")}
+            {t("马来西亚有哪些推荐的食品包装供应商？", "Which food packaging suppliers in Malaysia would you recommend?")}
           </p>
           <div className="space-y-2.5 text-zinc-700">
-            <p>{t("以下是几个常被提到的品牌：", "Here are a few brands that come up often:")}</p>
+            <p>{t("以下是几家常被提到的供应商：", "Here are a few suppliers that come up often:")}</p>
             <ol className="space-y-2">
               <li className="flex items-start gap-2 rounded-xl bg-blue-50 px-3 py-2 ring-1 ring-blue-200">
                 <span className="font-mono text-xs text-blue-600">1.</span>
                 <span>
-                  <b className="text-zinc-950">{t("你的品牌", "Your brand")}</b>
+                  <b className="text-zinc-950">{t("你的公司", "Your company")}</b>
                   <sup className="ml-1 rounded bg-blue-600 px-1 text-[10px] font-semibold text-white">1</sup>
-                  <span className="text-zinc-600"> — {t("定位清楚，官网与知乎的资料口径一致", "clear positioning; website and Zhihu facts match")}</span>
+                  <span className="text-zinc-600"> — {t("中英文官网与 LinkedIn 资料一致，写明产能与认证", "English and Chinese pages match LinkedIn; capacity and certifications stated")}</span>
                 </span>
               </li>
               <li className="flex items-start gap-2 px-3"><span className="font-mono text-xs text-zinc-400">2.</span><span className="text-zinc-500">{t("品牌 B", "Brand B")}</span></li>
               <li className="flex items-start gap-2 px-3"><span className="font-mono text-xs text-zinc-400">3.</span><span className="text-zinc-500">{t("品牌 C", "Brand C")}</span></li>
             </ol>
             <p className="border-t border-zinc-100 pt-2.5 text-xs text-zinc-500">
-              {t("来源：", "Sources: ")}<span className="text-blue-600">[1] {t("你的官网", "your website")}</span> · [2] {t("知乎专栏", "Zhihu column")}
+              {t("来源：", "Sources: ")}<span className="text-blue-600">[1] {t("你的官网", "your website")}</span> · [2] {t("行业名录", "industry directory")}
             </p>
           </div>
         </div>
@@ -157,7 +157,10 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
   const { t, locale, p: lpath } = useI18n();
   const appUrl = getAppUrl();
   const teaser = draftPlans.filter((p) => p.code === "starter" || p.code === "pro");
-  const guideHref = (slug: string) => (locale === "zh-hans" ? `/zh-hans/guide/${slug}/` : `/guide/${slug}/`);
+  // English readers see English guides; Chinese readers see Chinese ones (guides exist in one language family).
+  const isEn = (g: GuideCard) => g.lang === "en";
+  const shown = guides.filter((g) => isEn(g) === (locale === "en")).slice(0, 3);
+  const guideHref = (g: GuideCard) => lpath(`/guide/${g.slug}/`);
 
   return (
     <>
@@ -174,16 +177,16 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
               </span>
               {t("{LIVE} 已接入自动监测 · 其他引擎陆续接入中", "Live: {LIVE} · more engines coming")}
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-              {t("让 AI", "Get your brand")}
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-[3.1rem] lg:leading-[1.12]">
+              {t("让 AI 用中英文", "Get recommended by AI")}
               <span className="block bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
-                {t("推荐你的品牌", "cited by AI")}
+                {t("都推荐你的品牌", "in English and Chinese")}
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
               {t(
-                "当客户问 ChatGPT、Perplexity、Gemini、DeepSeek「推荐哪家」时，让你的品牌出现在答案里。GeoLens 帮品牌整理品牌事实、产出各引擎适用的内容，并持续监测提及率。",
-                "When customers ask ChatGPT, Perplexity, Gemini or DeepSeek for a recommendation, make sure your brand is in the answer. GeoLens helps brands structure their facts, produce engine-ready content, and track how often AI mentions them.",
+                "当买家用中文或英文问 ChatGPT、Gemini、DeepSeek「推荐哪家」时，让你的公司出现在答案里。GeoLens 帮新加坡、马来西亚、台湾的华语企业与贸易商整理品牌事实、产出中英文内容，并持续监测提及率。",
+                "When buyers ask ChatGPT, Gemini or DeepSeek for a recommendation — in English or in Chinese — make sure your company is in the answer. GeoLens helps Chinese-speaking businesses and traders in Singapore, Malaysia and Taiwan structure their facts, publish bilingual content and track how often AI mentions them.",
               )}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -243,8 +246,8 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
           <div className="[&>p]:mx-auto">
             <SectionLead>
               {t(
-                "用户越来越常直接问豆包、DeepSeek、通义千问，也问 ChatGPT、Perplexity、Gemini。若没有结构化投放与监测，你的品牌不会被点名。",
-                "Users ask Doubao, DeepSeek, Qwen — and ChatGPT, Perplexity, Gemini. Without structured GEO and monitoring, you never get named.",
+                "买家越来越常直接问 ChatGPT、Gemini、DeepSeek 该找哪家供应商，而且同一个问题可能先用英文问、再用中文问。没有一致的品牌事实与监测，你的公司不会被点名。",
+                "Buyers increasingly ask ChatGPT, Gemini or DeepSeek which supplier to choose — sometimes in English, sometimes in Chinese. Without consistent brand facts and monitoring, your company never gets named.",
               )}
             </SectionLead>
           </div>
@@ -300,8 +303,8 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
               <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">{t("先看看 AI 现在怎么回答你的品类", "First, see how AI answers questions in your category")}</h2>
               <p className="mt-4 max-w-xl leading-relaxed text-zinc-300">
                 {t(
-                  "用 10 个固定问法去问 DeepSeek（自动），其他 AI（豆包、ChatGPT 等）由人工查询记录，整理成一份报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
-                  "We ask DeepSeek 10 fixed questions (automated) and check other AI (Doubao, ChatGPT and more) manually, then send you a report: whether you are mentioned, which competitors are mentioned, and which public information to add first.",
+                  "用 10 个固定问法，中文、英文各问一次：{LIVE} 自动跑问，其他 AI 由人工查询记录，整理成一份中英对照报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
+                  "We ask 10 fixed questions in both English and Chinese — automatically on {LIVE}, manually on other AI — and send you a side-by-side report: whether you are mentioned, which competitors are, and which public information to add first.",
                 )}
               </p>
               <Link href={lpath("/demo/")} className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200">
@@ -332,7 +335,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       <Section className="pt-0 sm:pt-0">
         <div className="mx-auto max-w-3xl text-center [&>*]:mx-auto">
           <SectionLabel>{t("为什么选GeoLens", "Why GeoLens")}</SectionLabel>
-          <SectionTitle>{t("为 AI 搜索时代做的 GEO", "GEO built for the AI search era")}</SectionTitle>
+          <SectionTitle>{t("为华语企业做的双语 GEO", "Bilingual GEO for Chinese-speaking businesses")}</SectionTitle>
         </div>
         <ul className="mt-12 grid gap-5 sm:grid-cols-3">
           {reasons.map((r) => (
@@ -357,7 +360,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
       </Section>
 
       {/* Guides */}
-      {guides.length ? (
+      {shown.length ? (
         <div className="border-y border-zinc-200 bg-zinc-50">
           <Section>
             <div className="flex flex-wrap items-end justify-between gap-4">
@@ -368,13 +371,13 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
               <Link href={lpath("/guide/")} className="text-sm font-semibold text-zinc-950 hover:underline">{t("看全部指南", "All guides")} →</Link>
             </div>
             <ul className="mt-10 grid gap-5 md:grid-cols-3">
-              {guides.map((g) => (
+              {shown.map((g) => (
                 <li key={g.slug}>
-                  <Link href={guideHref(g.slug)} hrefLang={locale === "en" ? "zh-Hant" : undefined} className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5">
+                  <Link href={guideHref(g)} className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5">
                     <time dateTime={g.date} className="text-xs text-zinc-400">{g.date}</time>
                     <h3 className="mt-2 font-semibold leading-snug text-zinc-950 group-hover:text-blue-600">{tr(locale, g.title)}</h3>
                     <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-zinc-600">{tr(locale, g.description)}</p>
-                    <span className="mt-4 text-sm font-medium text-blue-600">{t("阅读", "Read")}{locale === "en" ? " (中文)" : ""} →</span>
+                    <span className="mt-4 text-sm font-medium text-blue-600">{t("阅读", "Read")} →</span>
                   </Link>
                 </li>
               ))}
@@ -389,7 +392,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
           <div>
             <SectionLabel>{t("方案预览", "Pricing teaser")}</SectionLabel>
             <SectionTitle>{t("自助工具，价格低于代运营", "Self-serve, priced below agencies")}</SectionTitle>
-            <SectionLead>{t("下列价目以新台币计；Pro 另有季付 NT$9,900／季（约 NT$3,300／月）。", "Prices in TWD; Pro is also NT$9,900 per quarter (~NT$3,300/mo).")}</SectionLead>
+            <SectionLead>{t("价格以美元计；Pro 另有季付 US$299／季（约 US$100／月）。", "Prices in USD; Pro is also US$299 per quarter (~US$100/mo).")}</SectionLead>
             <Link href={lpath("/pricing/")} className="mt-6 inline-flex text-sm font-semibold text-zinc-950 hover:underline">{t("看完整方案", "Full pricing")} →</Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">

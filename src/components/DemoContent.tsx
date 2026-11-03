@@ -29,7 +29,7 @@ const provide = [
   { zh: "网站", en: "Website" },
   { zh: "产业", en: "Industry" },
   { zh: "主要产品或服务", en: "Main products or services" },
-  { zh: "主要市场（台湾／亚太／全球）", en: "Main market (Taiwan / Asia-Pacific / global)" },
+  { zh: "主要市场（新加坡／马来西亚／台湾／其他）", en: "Main market (Singapore / Malaysia / Taiwan / other)" },
 ];
 
 function Check({ className = "" }: { className?: string }) {
@@ -115,10 +115,12 @@ function HealthCheck() {
   const email = getDemoEmail();
   const zh = locale.startsWith("zh");
   const days = checkDeliveryDays;
-  const contacts = [
+  const contacts: { k: string; v: string; href?: string }[] = [
     { k: "Email", v: email },
-    ...(contactIds.line ? [{ k: "LINE ID", v: contactIds.line }] : []),
+    ...(contactIds.whatsapp ? [{ k: "WhatsApp", v: `+${contactIds.whatsapp}`, href: `https://wa.me/${contactIds.whatsapp}` }] : []),
     ...(contactIds.wechat ? [{ k: t("微信 ID", "WeChat ID"), v: contactIds.wechat }] : []),
+    // LINE is mainly used in Taiwan.
+    ...(contactIds.line && locale === "zh-hant" ? [{ k: "LINE ID", v: contactIds.line }] : []),
   ];
   const [f, setF] = useState({ company: "", website: "", industry: "", product: "", market: "" });
   const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value });
@@ -128,8 +130,8 @@ function HealthCheck() {
     const subject = t("免费 AI 能见度健检申请", "Free AI visibility check request") + (f.company ? ` · ${f.company}` : "");
     const na = t("（未填）", "(not provided)");
     const body = zh
-      ? `${t("公司／品牌名称", "Company / brand name")}：${f.company}\n${t("网站", "Website")}：${f.website || na}\n${t("产业", "Industry")}：${f.industry || na}\n${t("主要产品或服务", "Main products or services")}：${f.product || na}\n${t("主要市场（台湾／亚太／全球）", "Main market (Taiwan / Asia-Pacific / global)")}：${f.market || na}`
-      : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Taiwan / Asia-Pacific / global): ${f.market || na}`;
+      ? `${t("公司／品牌名称", "Company / brand name")}：${f.company}\n${t("网站", "Website")}：${f.website || na}\n${t("产业", "Industry")}：${f.industry || na}\n${t("主要产品或服务", "Main products or services")}：${f.product || na}\n${t("主要市场（新加坡／马来西亚／台湾／其他）", "Main market (Singapore / Malaysia / Taiwan / other)")}：${f.market || na}`
+      : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Singapore / Malaysia / Taiwan / other): ${f.market || na}`;
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
@@ -139,8 +141,8 @@ function HealthCheck() {
     {
       h: t("我们实际去问 AI", "We ask the AI"),
       body: <p className="mt-2 text-sm leading-relaxed text-zinc-600">{t(
-        "用 10 个固定问法去问 DeepSeek（自动），其他 AI（豆包、ChatGPT 等）由人工查询记录，整理成一份报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
-        "We ask DeepSeek 10 fixed questions (automated) and check other AI (Doubao, ChatGPT and more) manually, then send you a report: whether you are mentioned, which competitors are mentioned, and which public information to add first.",
+        "用 10 个固定问法，中文、英文各问一次：{LIVE} 自动跑问，其他 AI 由人工查询记录，整理成一份中英对照报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
+        "We ask 10 fixed questions in both English and Chinese — automatically on {LIVE}, manually on other AI — and send you a side-by-side report: whether you are mentioned, which competitors are, and which public information to add first.",
       )}</p>,
     },
     {
@@ -154,8 +156,8 @@ function HealthCheck() {
         label={t("免费健检", "Free check")}
         title={t("免费 AI 能见度健检", "Free AI visibility check")}
         lead={t(
-          "看看 DeepSeek 等 AI 现在回答你的品类时，有没有提到你。免费、不绑约；不保证排名或见效时间。",
-          "See whether DeepSeek and other AI mention you when answering questions in your category. Free, no commitment; no guarantee of rankings or timing.",
+          "看看 ChatGPT、Gemini、DeepSeek 用中文和英文回答你的品类时，有没有提到你。免费、不绑约；不保证排名或见效时间。",
+          "See whether ChatGPT, Gemini and DeepSeek mention you when answering questions in your category — in English and in Chinese. Free, no commitment; no guarantee of rankings or timing.",
         )}
       >
         <ul className="mt-6 flex flex-wrap gap-2 text-sm">
@@ -194,7 +196,7 @@ function HealthCheck() {
                   { name: "website", label: t("网站", "Website") },
                   { name: "industry", label: t("产业", "Industry") },
                   { name: "product", label: t("主要产品或服务", "Main products or services") },
-                  { name: "market", label: t("主要市场（台湾／亚太／全球）", "Main market (Taiwan / Asia-Pacific / global)") },
+                  { name: "market", label: t("主要市场（新加坡／马来西亚／台湾／其他）", "Main market (Singapore / Malaysia / Taiwan / other)") },
                   { name: "email", label: "Email", required: true, type: "email" },
                 ]}
                 submit={t("送出申请", "Submit")}
@@ -207,7 +209,7 @@ function HealthCheck() {
                 <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
                 <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input value={f.industry} onChange={set("industry")} className={input} /></label>
                 <label className="block text-sm text-zinc-600">{t("主要产品或服务", "Main products or services")}<input value={f.product} onChange={set("product")} className={input} /></label>
-                <label className="block text-sm text-zinc-600">{t("主要市场（台湾／亚太／全球）", "Main market (Taiwan / Asia-Pacific / global)")}<input value={f.market} onChange={set("market")} className={input} /></label>
+                <label className="block text-sm text-zinc-600">{t("主要市场（新加坡／马来西亚／台湾／其他）", "Main market (Singapore / Malaysia / Taiwan / other)")}<input value={f.market} onChange={set("market")} className={input} /></label>
                 <button type="submit" className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800">
                   {t("用邮件申请健检", "Apply by email")}
                 </button>
@@ -222,7 +224,7 @@ function HealthCheck() {
                   <li key={c.k} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3">
                     <span className="min-w-0 text-sm">
                       <span className="block text-xs text-zinc-500">{c.k}</span>
-                      <span className="block break-all font-medium text-zinc-950">{c.v}</span>
+                      {c.href ? <a href={c.href} target="_blank" rel="noopener noreferrer" className="block break-all font-medium text-zinc-950 underline-offset-4 hover:underline">{c.v}</a> : <span className="block break-all font-medium text-zinc-950">{c.v}</span>}
                     </span>
                     <CopyButton value={c.v} label={t("复制", "Copy")} done={t("已复制", "Copied")} />
                   </li>
@@ -314,7 +316,7 @@ export function DemoContent() {
               { name: "name", label: t("称呼", "Name"), required: true },
               { name: "email", label: "Email", required: true, type: "email" },
               { name: "company", label: t("公司 / 品牌", "Company / brand") },
-              { name: "contact", label: t("微信／电话（选填）", "WeChat / phone (optional)") },
+              { name: "contact", label: t("WhatsApp／微信／电话（选填）", "WhatsApp / WeChat / phone (optional)") },
               { name: "note", label: t("想看什么", "What you want to see"), multiline: true },
             ]}
             submit={t("送出预约", "Send request")}
@@ -352,7 +354,7 @@ export function DemoContent() {
             />
           </label>
           <label className="block text-sm text-zinc-600">
-            {t("微信／电话（选填）", "WeChat / phone (optional)")}
+            {t("WhatsApp／微信／电话（选填）", "WhatsApp / WeChat / phone (optional)")}
             <input
               value={contact}
               onChange={(e) => setContact(e.target.value)}

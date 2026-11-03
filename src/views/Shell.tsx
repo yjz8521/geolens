@@ -12,8 +12,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const siteUrl = getSiteUrl();
 
-const DESC = "GeoLens：面向华语市场的 GEO SaaS。自动监测目前已接入 {LIVE}；{COMING_CN}与海外 {COMING_GLOBAL} 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。";
-const APP_DESC = "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。自动监测已接入 {LIVE}；{COMING_CN}及海外 {COMING_GLOBAL} 陆续接入中（海外专属投放包路线图）。";
+const DESC = "GeoLens：为新加坡、马来西亚、台湾与海外华语企业和贸易商做的双语 GEO。用中文和英文追踪 ChatGPT、Gemini、DeepSeek 等 AI 是否推荐你；自动监测目前已接入 {LIVE}。";
+const APP_DESC = "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与中英文提及监测。自动监测已接入 {LIVE}；{COMING_GLOBAL}、{COMING_CN} 陆续接入中。";
 
 export function rootMetadata(l: Locale): Metadata {
   const title = `${tr(l, siteConfig.name)} · ${tr(l, siteConfig.taglineZh, siteConfig.taglineEn)}`;
@@ -22,7 +22,7 @@ export function rootMetadata(l: Locale): Metadata {
     metadataBase: new URL(siteUrl),
     title: { default: title, template: `%s · ${tr(l, siteConfig.name)}` },
     description: tr(l, DESC),
-    keywords: ["GEO", "Generative Engine Optimization", "GeoLens", "DeepSeek", tr(l, "豆包", "Doubao"), tr(l, "通义千问", "Qwen"), "ChatGPT", "Perplexity"],
+    keywords: ["GEO", "Generative Engine Optimization", "AI visibility", "GeoLens", "ChatGPT", "Gemini", "DeepSeek", "Perplexity", "Singapore", "Malaysia", "Taiwan"],
     authors: [{ name: siteConfig.owner }],
     openGraph: { type: "website", locale: LOCALE_META[l].og, url: lp(l, "/"), siteName: tr(l, siteConfig.name), title, description: tagline, images: [{ url: "/og.png", width: 1200, height: 630, alt: "GeoLens" }] },
     twitter: { card: "summary_large_image", title: tr(l, siteConfig.name), description: tagline, images: ["/og.png"] },
@@ -37,7 +37,7 @@ function ld(l: Locale) {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": orgId, name: siteConfig.name, alternateName: [siteConfig.legacyName], url: siteUrl, logo: `${siteUrl}/logo.png`, email: getDemoEmail(), founder: { "@type": "Person", name: siteConfig.owner }, areaServed: ["TW", "MY", "SG", "JP", "KR", "Worldwide"] },
+      { "@type": "Organization", "@id": orgId, name: siteConfig.name, url: siteUrl, logo: `${siteUrl}/logo.png`, email: getDemoEmail(), founder: { "@type": "Person", name: siteConfig.owner }, areaServed: ["SG", "MY", "TW", "HK", "CN", "Worldwide"], knowsLanguage: ["en", "zh-Hans", "zh-Hant"], contactPoint: { "@type": "ContactPoint", contactType: "sales", email: getDemoEmail(), availableLanguage: ["English", "Chinese"] } },
       { "@type": "WebSite", "@id": `${siteUrl}/#website`, name: siteConfig.name, url: siteUrl, inLanguage: ["zh-Hant", "zh-Hans", "en"], publisher: { "@id": orgId } },
       { "@type": "WebPage", "@id": `${siteUrl}${lp(l, "/")}#webpage`, url: `${siteUrl}${lp(l, "/")}`, inLanguage, isPartOf: { "@id": `${siteUrl}/#website` } },
       {
@@ -52,9 +52,9 @@ function ld(l: Locale) {
         offers: [
           ...draftPlans.filter((p) => p.code !== "enterprise").map((p) => {
             const price = p.priceZh.replace(/[^0-9]/g, "") || "0";
-            return { "@type": "Offer", name: p.nameEn, price, priceCurrency: "TWD", url: `${siteUrl}${lp(l, "/pricing/")}`, ...(p.code === "free" ? {} : { priceSpecification: { "@type": "UnitPriceSpecification", price, priceCurrency: "TWD", billingDuration: "P1M" } }) };
+            return { "@type": "Offer", name: p.nameEn, price, priceCurrency: "USD", url: `${siteUrl}${lp(l, "/pricing/")}`, ...(p.code === "free" ? {} : { priceSpecification: { "@type": "UnitPriceSpecification", price, priceCurrency: "USD", billingDuration: "P1M" } }) };
           }),
-          { "@type": "Offer", name: "Pro (quarterly)", price: "9900", priceCurrency: "TWD", url: `${siteUrl}${lp(l, "/pricing/")}`, priceSpecification: { "@type": "UnitPriceSpecification", price: "9900", priceCurrency: "TWD", billingDuration: "P3M" } },
+          { "@type": "Offer", name: "Pro (quarterly)", price: "299", priceCurrency: "USD", url: `${siteUrl}${lp(l, "/pricing/")}`, priceSpecification: { "@type": "UnitPriceSpecification", price: "299", priceCurrency: "USD", billingDuration: "P3M" } },
         ],
       },
     ],

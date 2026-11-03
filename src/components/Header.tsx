@@ -11,7 +11,7 @@ import { PREFIXED } from "@/lib/locales";
 const links = [
   { href: "/", zh: "首页", en: "Home" },
   { href: "/pricing/", zh: "方案", en: "Pricing" },
-  { href: "/guide/", zh: "指南", en: "Guide (Chinese)" },
+  { href: "/guide/", zh: "指南", en: "Guides" },
   { href: "/faq/", zh: "FAQ", en: "FAQ" },
   { href: "/demo/", zh: "免费健检", en: "Free check" },
   { href: "/about/", zh: "关于", en: "About" },

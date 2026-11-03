@@ -31,9 +31,9 @@ export function ContactContent() {
         <div className="mt-8 max-w-xl rounded-2xl border border-zinc-200 bg-zinc-50 p-6 text-sm leading-relaxed text-zinc-600">
           <p className="font-semibold text-zinc-950">GeoLens</p>
           <p>{t("创办人：YuHao Hsu", "Founder: YuHao Hsu")}</p>
-          <p>{t("所在地：台湾", "Location: Taiwan")}</p>
+          <p>{t("所在地：台湾（服务新加坡、马来西亚与海外华语市场）", "Based in Taiwan, serving Singapore, Malaysia and Chinese-speaking markets worldwide")}</p>
           <p>{t("网站：", "Website: ")}https://geolens.uk</p>
-          <p>{t("营业时间：周一至周五 09:00–18:00（台北时间，UTC+8）", "Hours: Mon–Fri 09:00–18:00 Taipei time (UTC+8)")}</p>
+          <p>{t("营业时间：周一至周五 09:00–18:00（UTC+8，与新加坡、马来西亚同一时区）", "Hours: Mon–Fri 09:00–18:00 UTC+8 (same time zone as Singapore and Malaysia)")}</p>
         </div>
       </Section>
     </>

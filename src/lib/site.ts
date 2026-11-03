@@ -3,11 +3,9 @@ export const siteConfig = {
   name: "GeoLens",
   nameEn: "GeoLens",
   productFull: "GeoLens",
-  /** Former product name; kept in JSON-LD / llms.txt so AI links old mentions to the same entity. */
-  legacyName: "GeoLens Platform",
-  /** Homepage headline (owner picked option 3 of 3). */
-  taglineZh: "让 ChatGPT、Perplexity、Gemini 等 AI 推荐你的品牌",
-  taglineEn: "Get your brand cited by ChatGPT, Perplexity, Gemini and other AI answer engines",
+  /** Site tagline (title, footer, OG): bilingual GEO for Chinese-speaking businesses in SEA and Taiwan. */
+  taglineZh: "让 ChatGPT、Gemini、DeepSeek 用中英文都推荐你",
+  taglineEn: "Get recommended by ChatGPT, Gemini and DeepSeek — in English and Chinese",
   owner: "YuHao Hsu",
 };
 
@@ -41,7 +39,7 @@ export function pageMeta(l: Locale, path: string, title: string, description: st
   };
 }
 
-/** Must match next.config.ts basePath. Empty on Vercel root; set BASE_PATH=/yin-yuan-geo-landing for GitHub Pages. */
+/** Must match next.config.ts basePath. Empty on Vercel root; set BASE_PATH=/geolens for a GitHub project Pages mirror. */
 export const siteBasePath =
   process.env.NEXT_PUBLIC_BASE_PATH || process.env.BASE_PATH || "";
 
@@ -59,7 +57,7 @@ export const checkoutLinks = {
     "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/ce49e252-220e-4556-9003-e642cfa357a9",
 };
 
-/** Pro quarterly (NT$9,900 / 季) Lemon Squeezy checkout. */
+/** Pro quarterly (US$299 / 季) Lemon Squeezy checkout. */
 export const CHECKOUT_PRO_QUARTERLY =
   process.env.NEXT_PUBLIC_CHECKOUT_PRO_QUARTERLY?.trim() ||
   "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/11775d12-9b90-4a13-8079-2e16a94bf7ce";
@@ -68,6 +66,8 @@ export const CHECKOUT_PRO_QUARTERLY =
  * Public contact IDs shown on /demo/. Leave empty to hide that row.
  */
 export const contactIds = {
+  /** WhatsApp number in international format, digits only (e.g. 60123456789). Empty hides the row. */
+  whatsapp: process.env.NEXT_PUBLIC_CONTACT_WHATSAPP?.replace(/\D/g, "") || "",
   line: process.env.NEXT_PUBLIC_CONTACT_LINE_ID?.trim() || "a1993391683",
   wechat: process.env.NEXT_PUBLIC_CONTACT_WECHAT_ID?.trim() || "hao_031105",
 };
@@ -82,14 +82,14 @@ export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "kinnv@geolens.uk";
 }
 
-/** List prices (TWD); quotas align with geo-platform plan codes. */
+/** List prices (USD, draft); quotas align with geo-platform plan codes. */
 export const draftPlans = [
   {
     code: "free" as const,
     nameZh: "Free",
     nameEn: "Free",
-    priceZh: "NT$0",
-    priceEn: "NT$0",
+    priceZh: "US$0",
+    priceEn: "US$0",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "试用工作流与基础监测",
@@ -113,8 +113,8 @@ export const draftPlans = [
     code: "starter" as const,
     nameZh: "Starter",
     nameEn: "Starter",
-    priceZh: "NT$1,990",
-    priceEn: "NT$1,990",
+    priceZh: "US$59",
+    priceEn: "US$59",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "小团队起步投放与 API",
@@ -140,8 +140,8 @@ export const draftPlans = [
     code: "pro" as const,
     nameZh: "Pro",
     nameEn: "Pro",
-    priceZh: "NT$3,900",
-    priceEn: "NT$3,900",
+    priceZh: "US$119",
+    priceEn: "US$119",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "完整情报、Webhook 与归因",

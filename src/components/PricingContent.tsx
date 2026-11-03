@@ -23,15 +23,15 @@ export function PricingContent() {
       label={t("方案", "Pricing")}
       title={t("方案与价格：Free / Starter / Pro / Enterprise", "Plans & pricing: Free / Starter / Pro / Enterprise")}
       lead={t(
-        "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。Enterprise 与发票需求请来信联系。",
-        "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also billed quarterly). For Enterprise or invoicing, contact us.",
+        "Starter / Pro 以美元计价，支持信用卡与 PayPal（Pro 另有季付）。Enterprise 与发票需求请来信联系。",
+        "Starter / Pro are priced in USD and paid by card or PayPal (Pro can also be billed quarterly). For Enterprise or invoicing, contact us.",
       )}
     >
       {PAYMENTS_LIVE ? null : (
         <p className="mt-6 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-800">
           {t(
             "线上付款通道正在审核开通中，暂时可能无法完成刷卡。想现在开通，请点「联系开通」来信，我们会人工报价并开通。",
-            "Online checkout is pending approval and may not accept cards yet. To start now, use “contact to activate” and we will set you up manually.",
+            "Online checkout is pending approval and may not accept cards yet. To start now, use “Contact us to start” and we will set you up manually.",
           )}{" "}
           <a href={mailto} className="underline underline-offset-4 hover:text-zinc-950">{email}</a>
         </p>
@@ -59,12 +59,12 @@ export function PricingContent() {
         {draftPlans.map((p) => {
           const paid = p.code === "starter" || p.code === "pro";
           const href = paid
-            ? checkoutLinks[p.code as "starter" | "pro"]
+            ? PAYMENTS_LIVE ? checkoutLinks[p.code as "starter" | "pro"] : mailto
             : p.code === "enterprise"
               ? mailto
               : lpath("/demo/");
           const ctaLabel = paid
-            ? t("信用卡／PayPal 订阅", "Subscribe (card / PayPal)")
+            ? PAYMENTS_LIVE ? t("信用卡／PayPal 订阅", "Subscribe (card / PayPal)") : t("联系开通", "Contact us to start")
             : p.code === "enterprise"
               ? t("联系销售", "Contact sales")
               : t("申请试用", "Request demo");
@@ -120,9 +120,9 @@ export function PricingContent() {
                   {ctaLabel}
                 </a>
               )}
-              {p.code === "pro" ? (
+              {p.code === "pro" && PAYMENTS_LIVE ? (
                 <a href={CHECKOUT_PRO_QUARTERLY} rel="noopener noreferrer" className="mt-2 block rounded-full border border-zinc-300 py-2 text-center text-xs text-zinc-950 hover:bg-zinc-100">
-                  {t("季付 NT$9,900／季（约 NT$3,300／月，省 15%）", "Quarterly NT$9,900 (~NT$3,300/mo, save 15%)")}
+                  {t("季付 US$299／季（约 US$100／月，省 16%）", "Quarterly US$299 (~US$100/mo, save 16%)")}
                 </a>
               ) : null}
             </div>

@@ -9,27 +9,28 @@ import { HomeContent } from "@/components/HomeContent";
 import { JsonLd } from "@/components/JsonLd";
 import { PricingContent } from "@/components/PricingContent";
 import { PageHero } from "@/components/Section";
-import { faqs, guides } from "@/content/geo";
+import { faqs, guideLocales, guides } from "@/content/geo";
 import { LOCALE_META, alternates, lp, tr, type Locale } from "@/lib/locales";
 import { getSiteUrl, pageMeta, siteConfig } from "@/lib/site";
 
-export const GUIDE_LOCALES = ["zh-hant", "zh-hans"] as const satisfies readonly Locale[];
-export const hasGuideArticles = (l: Locale) => (GUIDE_LOCALES as readonly string[]).includes(l);
+/** Where a guide is read from locale `l`: its own locale if it exists there, else the guide's first locale. */
+const guideHome = (l: Locale, g: (typeof guides)[number]): Locale => (guideLocales(g).includes(l) ? l : guideLocales(g)[0]);
+const byDate = [...guides].sort((a, b) => b.date.localeCompare(a.date));
 
 export const homeMeta = (l: Locale): Metadata => ({ alternates: alternates(l, "/") });
-const latestGuides = [...guides].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3).map(({ slug, title, description, date }) => ({ slug, title, description, date }));
-export const Home = () => <HomeContent guides={latestGuides} />;
+const guideCards = byDate.map(({ slug, title, description, date, lang }) => ({ slug, title, description, date, lang }));
+export const Home = () => <HomeContent guides={guideCards} />;
 
-export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "GeoLens 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。可用信用卡／PayPal 订阅。");
+export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "GeoLens 价格：Free US$0；Starter US$59／月；Pro US$119／月或季付 US$299／季；Enterprise 洽谈。可用信用卡／PayPal 订阅。");
 export const Pricing = () => <PricingContent />;
 
-export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "GeoLens 是一家位于台湾的生成式引擎优化（GEO）SaaS 公司，帮助品牌被 ChatGPT、Perplexity、Gemini、豆包、DeepSeek 等 AI 引用与推荐。创办人 YuHao Hsu。");
+export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "GeoLens 是一家位于台湾的生成式引擎优化（GEO）SaaS 公司，服务新加坡、马来西亚、台湾与海外的华语企业和贸易商，帮助它们被 ChatGPT、Gemini、DeepSeek 等 AI 用中英文引用与推荐。创办人 YuHao Hsu。");
 export const About = () => <AboutContent />;
 
-export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "免费 AI 能见度健检", "免费 AI 能见度健检：用 10 个固定问法问 DeepSeek（自动），其他 AI 人工查询，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约，不保证排名或见效时间。也可申请试用／远程演示。");
+export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "免费 AI 能见度健检", "免费 AI 能见度健检：用 10 个固定问法中英文各问一次，{LIVE} 自动跑问、其他 AI 人工查询，整理成中英对照报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约，不保证排名或见效时间。也可申请试用／远程演示。");
 export const Demo = () => <DemoContent />;
 
-export const faqMeta = (l: Locale): Metadata => pageMeta(l, "/faq/", "常见问题 FAQ：什么是 GEO、和 SEO 差别、价格", "GeoLens 常见问题：什么是 GEO、与 SEO 差别、国内与海外引擎覆盖（豆包 DeepSeek ChatGPT Perplexity 等）、如何监测、价格与适用对象。");
+export const faqMeta = (l: Locale): Metadata => pageMeta(l, "/faq/", "常见问题 FAQ：什么是 GEO、和 SEO 差别、价格", "GeoLens 常见问题：什么是 GEO、与 SEO 差别、支持哪些 AI 引擎（ChatGPT、Gemini、DeepSeek 等）、中英文怎么监测、价格与适用对象。");
 export function Faq({ l }: { l: Locale }) {
   const items = faqs.map((f) => ({ q: tr(l, f.q), a: tr(l, f.a) }));
   return (
@@ -54,27 +55,29 @@ export function Faq({ l }: { l: Locale }) {
   );
 }
 
-export const guideIndexMeta = (l: Locale): Metadata => pageMeta(l, "/guide/", "GEO 指南：生成式引擎优化入门", "GeoLens 指南：GEO 入门、实体卡写法、如何检测国内与海外 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）是否提到你的品牌。");
+export const guideIndexMeta = (l: Locale): Metadata => pageMeta(l, "/guide/", "GEO 指南：生成式引擎优化入门", "GeoLens 指南：GEO 入门、实体卡写法、如何用中英文检测 ChatGPT、Gemini、DeepSeek 等 AI 是否提到你的品牌，以及贸易、代工、电商、餐饮的做法。");
 export function GuideIndex({ l }: { l: Locale }) {
-  const zh = hasGuideArticles(l);
-  const at = zh ? l : "zh-hant";
+  // Guides in the reader's language first, then the rest (tagged with their language).
+  const list = [...byDate.filter((g) => guideLocales(g).includes(l)), ...byDate.filter((g) => !guideLocales(g).includes(l))];
   return (
     <>
-      <PageHero label={tr(l, "GEO 指南")} title={tr(l, "免费学会自己检测与优化")} lead={tr(l, "GeoLens 指南：GEO 入门、实体卡写法、如何检测国内与海外 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）是否提到你的品牌。")}>
-        {!zh && <p className="mt-6 max-w-2xl rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-600">{tr(l, "指南正文目前只有中文版本（繁体与简体）。以下标题与摘要为翻译，点击后会打开繁体中文正文。")}</p>}
-      </PageHero>
+      <PageHero label={tr(l, "GEO 指南")} title={tr(l, "免费学会自己检测与优化")} lead={tr(l, "GeoLens 指南：GEO 入门、实体卡写法、如何用中英文检测 ChatGPT、Gemini、DeepSeek 等 AI 是否提到你的品牌，以及贸易、代工、电商、餐饮的做法。")} />
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <ul className="grid gap-5 md:grid-cols-2">
-          {[...guides].sort((a, b) => b.date.localeCompare(a.date)).map((g) => (
-            <li key={g.slug}>
-              <Link href={lp(at, `/guide/${g.slug}/`)} hrefLang={zh ? undefined : "zh-Hant"} className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5">
-                <p className="text-xs text-zinc-400"><time dateTime={g.date}>{g.date}</time>{!zh && " · 中文"}</p>
-                <h2 className="mt-2 text-lg font-semibold leading-snug text-zinc-950 group-hover:text-blue-600">{tr(l, g.title)}</h2>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600">{tr(l, g.description)}</p>
-                <span className="mt-4 text-sm font-medium text-blue-600">{tr(l, "阅读", "Read")} →</span>
-              </Link>
-            </li>
-          ))}
+          {list.map((g) => {
+            const at = guideHome(l, g);
+            const other = at !== l;
+            return (
+              <li key={g.slug}>
+                <Link href={lp(at, `/guide/${g.slug}/`)} hrefLang={other ? LOCALE_META[at].hreflang : undefined} className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5">
+                  <p className="text-xs text-zinc-400"><time dateTime={g.date}>{g.date}</time>{other && ` · ${at === "en" ? "English" : "中文"}`}</p>
+                  <h2 className="mt-2 text-lg font-semibold leading-snug text-zinc-950 group-hover:text-blue-600">{tr(l, g.title)}</h2>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600">{tr(l, g.description)}</p>
+                  <span className="mt-4 text-sm font-medium text-blue-600">{tr(l, "阅读", "Read")} →</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
@@ -86,7 +89,7 @@ export function guideMeta(l: Locale, slug: string): Metadata {
   if (!g) return {};
   const path = `/guide/${g.slug}/`;
   const title = tr(l, g.title), description = tr(l, g.description);
-  return { title, description, alternates: alternates(l, path, GUIDE_LOCALES), openGraph: { type: "article", url: lp(l, path), siteName: tr(l, "GeoLens"), locale: LOCALE_META[l].og, title, description, publishedTime: g.date, images: [{ url: "/og.png", width: 1200, height: 630, alt: "GeoLens" }] }, twitter: { card: "summary_large_image", title, description, images: ["/og.png"] } };
+  return { title, description, alternates: alternates(l, path, guideLocales(g)), openGraph: { type: "article", url: lp(l, path), siteName: tr(l, "GeoLens"), locale: LOCALE_META[l].og, title, description, publishedTime: g.date, images: [{ url: "/og.png", width: 1200, height: 630, alt: "GeoLens" }] }, twitter: { card: "summary_large_image", title, description, images: ["/og.png"] } };
 }
 export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
   const g = guides.find((x) => x.slug === slug);
@@ -94,7 +97,7 @@ export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
   const site = getSiteUrl();
   const url = `${site}${lp(l, `/guide/${g.slug}/`)}`;
   const title = tr(l, g.title), description = tr(l, g.description);
-  const others = guides.filter((x) => x.slug !== g.slug);
+  const others = byDate.filter((x) => x.slug !== g.slug && guideLocales(x).includes(l));
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: title, description, inLanguage: LOCALE_META[l].hreflang, url, mainEntityOfPage: url, author: { "@type": "Person", name: siteConfig.owner, url: `${site}${lp(l, "/about/")}` }, publisher: { "@type": "Organization", "@id": `${site}/#org`, name: siteConfig.name, url: site }, datePublished: g.date, dateModified: g.date, image: `${site}/og.png` }} />
@@ -116,7 +119,7 @@ export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
       <p className="mt-12 text-zinc-600">{tr(l, "GeoLens 把以上流程做成工作台：实体卡 → 引擎投放包 → 渠道发布 → 提及监测。")}<Link href={lp(l, "/faq/")} className="text-zinc-950 hover:underline">{tr(l, "常见问题")}</Link> · <Link href={lp(l, "/demo/")} className="text-zinc-950 hover:underline">{tr(l, "申请试用")}</Link></p>
       <aside className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
         <p className="font-semibold text-zinc-950">{tr(l, "不想自己测？申请免费 AI 能见度健检")}</p>
-        <p className="mt-2 text-sm leading-relaxed text-zinc-600">{tr(l, "我们用固定问法问 DeepSeek 等 AI，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约。")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-zinc-600">{tr(l, "我们用固定问法、中英文各问一次 ChatGPT、Gemini、DeepSeek 等 AI，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约。")}</p>
         <Link href={lp(l, "/demo/")} className="mt-4 inline-flex rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">{tr(l, "免费 AI 能见度健检")}</Link>
       </aside>
       <nav aria-label={tr(l, "其他指南")} className="mt-10 border-t border-zinc-200 pt-8">
