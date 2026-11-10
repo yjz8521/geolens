@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { LocaleToggle } from "./LocaleToggle";
 import { Logo } from "./Logo";
 import { useI18n } from "@/lib/i18n";
-import { siteConfig } from "@/lib/site";
+import { getAppUrl, siteConfig } from "@/lib/site";
 import { PREFIXED } from "@/lib/locales";
 
 const links = [
@@ -62,6 +62,14 @@ export function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <LocaleToggle />
+          {getAppUrl() ? (
+            <a
+              href={getAppUrl()!}
+              className="hidden sm:inline-flex rounded-lg px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950 transition"
+            >
+              {t("登入工作台", "Console")}
+            </a>
+          ) : null}
           <Link
             href={lpath("/demo/")}
             className="whitespace-nowrap rounded-full bg-zinc-950 px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-zinc-800 sm:text-sm"

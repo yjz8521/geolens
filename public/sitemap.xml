@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://geolens.uk/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/"/>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/"/>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/pricing/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/pricing/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/pricing/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/pricing/"/>
@@ -52,7 +52,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/pricing/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/pricing/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/faq/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/faq/"/>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/faq/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/faq/"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/faq/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/faq/"/>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/demo/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/demo/"/>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/demo/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/demo/"/>
@@ -112,7 +112,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/demo/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/demo/"/>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/about/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/about/"/>
@@ -132,7 +132,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/about/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/about/"/>
@@ -142,7 +142,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/about/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/about/"/>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/contact/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/contact/"/>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/contact/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/contact/"/>
@@ -172,7 +172,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/contact/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/contact/"/>
@@ -182,7 +182,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/privacy/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/privacy/"/>
@@ -192,7 +192,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/privacy/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/privacy/"/>
@@ -202,7 +202,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/privacy/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/privacy/"/>
@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/terms/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/terms/"/>
@@ -222,7 +222,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hant/terms/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/terms/"/>
@@ -232,7 +232,7 @@
   </url>
   <url>
     <loc>https://geolens.uk/zh-hans/terms/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://geolens.uk/terms/"/>

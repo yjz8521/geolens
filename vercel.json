@@ -1,74 +1,65 @@
 {
-  "redirects": [
+  "headers": [
     {
-      "source": "/en",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/:path*",
-      "destination": "/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/guide/geo-intro",
-      "destination": "/zh-hant/guide/geo-intro/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/entity-card",
-      "destination": "/zh-hant/guide/entity-card/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/monitor-ai-mentions",
-      "destination": "/zh-hant/guide/monitor-ai-mentions/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/deepseek-self-check",
-      "destination": "/zh-hant/guide/deepseek-self-check/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/b2b-equipment-geo",
-      "destination": "/zh-hant/guide/b2b-equipment-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/restaurant-geo",
-      "destination": "/zh-hant/guide/restaurant-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/oem-manufacturer-geo",
-      "destination": "/zh-hant/guide/oem-manufacturer-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/guide/ecommerce-geo",
-      "destination": "/zh-hant/guide/ecommerce-geo/",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(ms|ja|ko)",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(ms|ja|ko)/:path*",
-      "destination": "/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/sponsor",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/zh-hans/sponsor",
-      "destination": "/zh-hans/",
-      "permanent": true
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
     }
+  ],
+  "redirects": [
+    { "source": "/sponsor/", "destination": "/", "permanent": true },
+    { "source": "/sponsor", "destination": "/", "permanent": true },
+    { "source": "/zh-hant/sponsor/", "destination": "/zh-hant/", "permanent": true },
+    { "source": "/zh-hant/sponsor", "destination": "/zh-hant/", "permanent": true },
+    { "source": "/zh-hans/sponsor/", "destination": "/zh-hans/", "permanent": true },
+    { "source": "/zh-hans/sponsor", "destination": "/zh-hans/", "permanent": true },
+    { "source": "/:lang(en|ms|ja|ko)/sponsor/", "destination": "/", "permanent": true },
+    { "source": "/:lang(en|ms|ja|ko)/sponsor", "destination": "/", "permanent": true },
+
+    { "source": "/guide/taiwan-brand-mainland-ai/", "destination": "/zh-hant/guide/", "permanent": true },
+    { "source": "/guide/taiwan-brand-mainland-ai", "destination": "/zh-hant/guide/", "permanent": true },
+    { "source": "/zh-hant/guide/taiwan-brand-mainland-ai/", "destination": "/zh-hant/guide/", "permanent": true },
+    { "source": "/zh-hant/guide/taiwan-brand-mainland-ai", "destination": "/zh-hant/guide/", "permanent": true },
+    { "source": "/zh-hans/guide/taiwan-brand-mainland-ai/", "destination": "/zh-hans/guide/", "permanent": true },
+    { "source": "/zh-hans/guide/taiwan-brand-mainland-ai", "destination": "/zh-hans/guide/", "permanent": true },
+    { "source": "/:lang(en|ms|ja|ko)/guide/taiwan-brand-mainland-ai/", "destination": "/guide/", "permanent": true },
+    { "source": "/:lang(en|ms|ja|ko)/guide/taiwan-brand-mainland-ai", "destination": "/guide/", "permanent": true },
+
+    { "source": "/guide/geo-intro/", "destination": "/zh-hant/guide/geo-intro/", "permanent": true },
+    { "source": "/guide/geo-intro", "destination": "/zh-hant/guide/geo-intro/", "permanent": true },
+    { "source": "/guide/entity-card/", "destination": "/zh-hant/guide/entity-card/", "permanent": true },
+    { "source": "/guide/entity-card", "destination": "/zh-hant/guide/entity-card/", "permanent": true },
+    { "source": "/guide/monitor-ai-mentions/", "destination": "/zh-hant/guide/monitor-ai-mentions/", "permanent": true },
+    { "source": "/guide/monitor-ai-mentions", "destination": "/zh-hant/guide/monitor-ai-mentions/", "permanent": true },
+    { "source": "/guide/deepseek-self-check/", "destination": "/zh-hant/guide/deepseek-self-check/", "permanent": true },
+    { "source": "/guide/deepseek-self-check", "destination": "/zh-hant/guide/deepseek-self-check/", "permanent": true },
+    { "source": "/guide/b2b-equipment-geo/", "destination": "/zh-hant/guide/b2b-equipment-geo/", "permanent": true },
+    { "source": "/guide/b2b-equipment-geo", "destination": "/zh-hant/guide/b2b-equipment-geo/", "permanent": true },
+    { "source": "/guide/restaurant-geo/", "destination": "/zh-hant/guide/restaurant-geo/", "permanent": true },
+    { "source": "/guide/restaurant-geo", "destination": "/zh-hant/guide/restaurant-geo/", "permanent": true },
+    { "source": "/guide/oem-manufacturer-geo/", "destination": "/zh-hant/guide/oem-manufacturer-geo/", "permanent": true },
+    { "source": "/guide/oem-manufacturer-geo", "destination": "/zh-hant/guide/oem-manufacturer-geo/", "permanent": true },
+    { "source": "/guide/ecommerce-geo/", "destination": "/zh-hant/guide/ecommerce-geo/", "permanent": true },
+    { "source": "/guide/ecommerce-geo", "destination": "/zh-hant/guide/ecommerce-geo/", "permanent": true },
+
+    { "source": "/:lang(en|ms|ja|ko)/guide/:slug(geo-intro|entity-card|monitor-ai-mentions|deepseek-self-check|b2b-equipment-geo|restaurant-geo|oem-manufacturer-geo|ecommerce-geo)/", "destination": "/zh-hant/guide/:slug/", "permanent": true },
+    { "source": "/:lang(en|ms|ja|ko)/guide/:slug(geo-intro|entity-card|monitor-ai-mentions|deepseek-self-check|b2b-equipment-geo|restaurant-geo|oem-manufacturer-geo|ecommerce-geo)", "destination": "/zh-hant/guide/:slug/", "permanent": true },
+    { "source": "/:lang(ms|ja|ko)/guide/:slug*/", "destination": "/guide/", "permanent": true },
+    { "source": "/:lang(ms|ja|ko)/guide/:slug*", "destination": "/guide/", "permanent": true },
+
+    { "source": "/en/", "destination": "/", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/:path*/", "destination": "/:path*/", "permanent": true },
+    { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
+
+    { "source": "/:lang(ms|ja|ko)/", "destination": "/", "permanent": true },
+    { "source": "/:lang(ms|ja|ko)", "destination": "/", "permanent": true },
+    { "source": "/:lang(ms|ja|ko)/:path*/", "destination": "/:path*/", "permanent": true },
+    { "source": "/:lang(ms|ja|ko)/:path*", "destination": "/:path*", "permanent": true }
   ]
 }

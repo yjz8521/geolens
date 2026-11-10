@@ -1,9 +1,37 @@
 # Cloudflare Pages redirects (mirrors vercel.json). 301 = permanent.
-# English moved from /en/ to the site root on 2026-11-03.
-/en / 301
-/en/ / 301
-/en/* /:splat 301
-# Chinese guides moved from the root to /zh-hant/ when English became the default.
+# Retired sponsor pages (placed first to avoid multi-hop redirect chains).
+/sponsor/ / 301
+/sponsor / 301
+/zh-hant/sponsor/ /zh-hant/ 301
+/zh-hant/sponsor /zh-hant/ 301
+/zh-hans/sponsor/ /zh-hans/ 301
+/zh-hans/sponsor /zh-hans/ 301
+/en/sponsor/ / 301
+/en/sponsor / 301
+/ms/sponsor/ / 301
+/ms/sponsor / 301
+/ja/sponsor/ / 301
+/ja/sponsor / 301
+/ko/sponsor/ / 301
+/ko/sponsor / 301
+
+# Retired guide article.
+/guide/taiwan-brand-mainland-ai/ /zh-hant/guide/ 301
+/guide/taiwan-brand-mainland-ai /zh-hant/guide/ 301
+/zh-hant/guide/taiwan-brand-mainland-ai/ /zh-hant/guide/ 301
+/zh-hant/guide/taiwan-brand-mainland-ai /zh-hant/guide/ 301
+/zh-hans/guide/taiwan-brand-mainland-ai/ /zh-hans/guide/ 301
+/zh-hans/guide/taiwan-brand-mainland-ai /zh-hans/guide/ 301
+/en/guide/taiwan-brand-mainland-ai/ /guide/ 301
+/en/guide/taiwan-brand-mainland-ai /guide/ 301
+/ms/guide/taiwan-brand-mainland-ai/ /guide/ 301
+/ms/guide/taiwan-brand-mainland-ai /guide/ 301
+/ja/guide/taiwan-brand-mainland-ai/ /guide/ 301
+/ja/guide/taiwan-brand-mainland-ai /guide/ 301
+/ko/guide/taiwan-brand-mainland-ai/ /guide/ 301
+/ko/guide/taiwan-brand-mainland-ai /guide/ 301
+
+# Chinese guides moved from the root (and legacy locale prefixes) to /zh-hant/ when English became the default.
 /guide/geo-intro/ /zh-hant/guide/geo-intro/ 301
 /guide/geo-intro /zh-hant/guide/geo-intro/ 301
 /guide/entity-card/ /zh-hant/guide/entity-card/ 301
@@ -20,14 +48,32 @@
 /guide/oem-manufacturer-geo /zh-hant/guide/oem-manufacturer-geo/ 301
 /guide/ecommerce-geo/ /zh-hant/guide/ecommerce-geo/ 301
 /guide/ecommerce-geo /zh-hant/guide/ecommerce-geo/ 301
-# Retired locales and pages.
+
+/en/guide/geo-intro/ /zh-hant/guide/geo-intro/ 301
+/en/guide/entity-card/ /zh-hant/guide/entity-card/ 301
+/en/guide/monitor-ai-mentions/ /zh-hant/guide/monitor-ai-mentions/ 301
+/en/guide/deepseek-self-check/ /zh-hant/guide/deepseek-self-check/ 301
+/en/guide/b2b-equipment-geo/ /zh-hant/guide/b2b-equipment-geo/ 301
+/en/guide/restaurant-geo/ /zh-hant/guide/restaurant-geo/ 301
+/en/guide/oem-manufacturer-geo/ /zh-hant/guide/oem-manufacturer-geo/ 301
+/en/guide/ecommerce-geo/ /zh-hant/guide/ecommerce-geo/ 301
+
+/ms/guide/* /guide/ 301
+/ja/guide/* /guide/ 301
+/ko/guide/* /guide/ 301
+
+# English moved from /en/ to the site root on 2026-11-03.
+/en/ / 301
+/en / 301
+/en/* /:splat 301
+
+# Retired locales.
+/ms/ / 301
 /ms / 301
 /ms/* /:splat 301
+/ja/ / 301
 /ja / 301
 /ja/* /:splat 301
+/ko/ / 301
 /ko / 301
 /ko/* /:splat 301
-/sponsor / 301
-/sponsor/ / 301
-/zh-hans/sponsor /zh-hans/ 301
-/zh-hans/sponsor/ /zh-hans/ 301
